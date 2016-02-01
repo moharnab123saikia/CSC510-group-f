@@ -1,5 +1,5 @@
 
-CSC 510 (Software Engineering) project(RestoScraper)
+CSC 510 (Software Engineering) project (RestoScraper)
 
 Consumer reviews of restaurants are scattered across various websites in the Internet. A typical user, on an average visits more than two websites to get the reviews of the restaurant to dine in. He also spends a considerable amount of time to get an overall idea of the quality of the restaurant by manually comparing the reviews in those websites. On the other hand, users who visit just one or two sites are not satisfied with the quality of the reviews and are often misled by the ratings.
 
