@@ -1,0 +1,27 @@
+{
+"update_url":"http://clients2.google.com/service/update2/crx",
+  "manifest_version": 2,
+  "name": "RestoScrapper-Price Compare",
+  "version": "1.0",
+  "description": "Restaurant ratings comparision extension that finds the best place to dine for you.",
+  "background": {
+    "page": "background.html"
+  },
+  "permissions": [
+    "https://*/*",
+    "http://*/*",
+    "tabs"
+  ],
+  "icons": { "16": "icon16.png",
+             "48": "icon48.png",
+             "128": "icon128.png" },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*","https://*/*"],
+      "js" : ["contentscript.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    "close_button_red.png"
+  ]
+}
