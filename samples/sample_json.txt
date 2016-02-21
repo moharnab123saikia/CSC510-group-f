@@ -4,6 +4,7 @@
 "name" : "el cerro",
 "data" : {
 "yelp" : {
+"url" : "",
 "rating" : "4.5",
 "count" : "45",
 "reviews" : [{
@@ -11,7 +12,8 @@
 	"review" : "test"
 }]
 },
-"googleratings" : {
+"foursquare" : {
+"url" : "",
 "rating" : "5",
 "count" : "34",
 "reviews" : [{
@@ -20,6 +22,7 @@
 }]
 },
 "tripadvisor" : {
+"url" : "",
 "rating" : "",
 "count" : "",
 "reviews" : [{
@@ -38,6 +41,7 @@
 "name" : "ruckus",
 "data" : {
 "yelp" : {
+"url" : "",
 "rating" : "5",
 "count" : "23",
 "reviews" : [{
@@ -45,7 +49,8 @@
 	"review" : "test"
 }]
 },
-"googleratings" : {
+"foursquare" : {
+"url" : "",
 "rating" : "4.7",
 "count" : "56",
 "reviews" : [{
@@ -54,6 +59,7 @@
 }]
 },
 "tripadvisor" : {
+"url" : "",
 "rating" : "4.6",
 "count" : "27",
 "reviews" : [{
