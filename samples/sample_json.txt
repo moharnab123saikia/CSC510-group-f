@@ -1,76 +1,86 @@
-{"restaurants" :[
 {
-"restaurant_id_1" : {
-"name" : "el cerro",
-"data" : {
-"yelp" : {
-"url" : "http://www.yelp.com/biz/bida-manda-raleigh",
-"rating" : "4.5",
-"count" : "45",
-"reviews" : [{
-	"scale" : "4",
-	"review" : "test"
-}]
-},
-"foursquare" : {
-"url" : "https://foursquare.com/v/bida-manda-laotian-restaurant-and-bar/4ee404309911944900b07ad5",
-"rating" : "5",
-"count" : "34",
-"reviews" : [{
-	"scale" : "4",
-	"review" : "test"
-}]
-},
-"tripadvisor" : {
-"url" : "http://www.tripadvisor.com/Restaurant_Review-g49463-d3471247-Reviews-Bida_Manda-Raleigh_North_Carolina.html",
-"rating" : "",
-"count" : "",
-"reviews" : [{
-	"scale" : "4",
-	"review" : "test"
-},{
-	"scale" : "4.2",
-	"review" : "test1"
-}]
+   "restaurants":[
+      {
+         "restaurant_id_1":{
+            "name":"el cerro",
+            "data":{
+               "yelp":{
+                  "rating":"4.5",
+                  "count":"45",
+                  "reviews":[
+                     {
+                        "scale":"4",
+                        "review":"test"
+                     }
+                  ]
+               },
+               "googleratings":{
+                  "rating":"5",
+                  "count":"34",
+                  "reviews":[
+                     {
+                        "scale":"4",
+                        "review":"test"
+                     }
+                  ]
+               },
+               "tripadvisor":{
+                  "rating":"",
+                  "count":"",
+                  "reviews":[
+                     {
+                        "scale":"4",
+                        "review":"test"
+                     },
+                     {
+                        "scale":"4.2",
+                        "review":"test1"
+                     }
+                  ]
+               }
+            }
+         }
+      },
+      {
+         "restaurant_id_2":{
+            "name":"ruckus",
+            "data":{
+               "yelp":{
+                  "rating":"5",
+                  "count":"23",
+                  "reviews":[
+                     {
+                        "scale":"4",
+                        "review":"test"
+                     }
+                  ]
+               },
+               "googleratings":{
+                  "rating":"4.7",
+                  "count":"56",
+                  "reviews":[
+                     {
+                        "scale":"4",
+                        "review":"test"
+                     }
+                  ]
+               },
+               "tripadvisor":{
+                  "rating":"4.6",
+                  "count":"27",
+                  "reviews":[
+                     {
+                        "scale":"4",
+                        "review":"test"
+                     },
+                     {
+                        "scale":"4.2",
+                        "review":"test1"
+                     }
+                  ]
+               }
+            }
+         }
+      }
+   ]
 }
-}
-}
-}, 
-{
-"restaurant_id_2" : {
-"name" : "ruckus",
-"data" : {
-"yelp" : {
-"url" : "http://www.yelp.com/biz/glenwood-grill-raleigh",
-"rating" : "5",
-"count" : "23",
-"reviews" : [{
-	"scale" : "4",
-	"review" : "test"
-}]
-},
-"foursquare" : {
-"url" : "https://foursquare.com/v/glenwood-grill/4bace827f964a52012183be3",
-"rating" : "4.7",
-"count" : "56",
-"reviews" : [{
-	"scale" : "4",
-	"review" : "test"
-}]
-},
-"tripadvisor" : {
-"url" : "http://www.tripadvisor.com/Restaurant_Review-g49463-d444941-Reviews-Glenwood_Grill-Raleigh_North_Carolina.html",
-"rating" : "4.6",
-"count" : "27",
-"reviews" : [{
-	"scale" : "4",
-	"review" : "test"
-},{
-	"scale" : "4.2",
-	"review" : "test1"
-}]
-}
-}
-}
-}
-]}
