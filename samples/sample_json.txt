@@ -4,7 +4,7 @@
 "name" : "el cerro",
 "data" : {
 "yelp" : {
-"url" : "",
+"url" : "http://www.yelp.com/biz/bida-manda-raleigh",
 "rating" : "4.5",
 "count" : "45",
 "reviews" : [{
@@ -13,7 +13,7 @@
 }]
 },
 "foursquare" : {
-"url" : "",
+"url" : "https://foursquare.com/v/bida-manda-laotian-restaurant-and-bar/4ee404309911944900b07ad5",
 "rating" : "5",
 "count" : "34",
 "reviews" : [{
@@ -22,7 +22,7 @@
 }]
 },
 "tripadvisor" : {
-"url" : "",
+"url" : "http://www.tripadvisor.com/Restaurant_Review-g49463-d3471247-Reviews-Bida_Manda-Raleigh_North_Carolina.html",
 "rating" : "",
 "count" : "",
 "reviews" : [{
@@ -41,7 +41,7 @@
 "name" : "ruckus",
 "data" : {
 "yelp" : {
-"url" : "",
+"url" : "http://www.yelp.com/biz/glenwood-grill-raleigh",
 "rating" : "5",
 "count" : "23",
 "reviews" : [{
@@ -50,7 +50,7 @@
 }]
 },
 "foursquare" : {
-"url" : "",
+"url" : "https://foursquare.com/v/glenwood-grill/4bace827f964a52012183be3",
 "rating" : "4.7",
 "count" : "56",
 "reviews" : [{
@@ -59,7 +59,7 @@
 }]
 },
 "tripadvisor" : {
-"url" : "",
+"url" : "http://www.tripadvisor.com/Restaurant_Review-g49463-d444941-Reviews-Glenwood_Grill-Raleigh_North_Carolina.html",
 "rating" : "4.6",
 "count" : "27",
 "reviews" : [{
