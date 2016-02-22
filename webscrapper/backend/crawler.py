@@ -5,6 +5,59 @@ from os import listdir
 from os import getcwd
 import json
 import csv
+import re
+
+def getReviewsForTripAdvisor(soup):
+	reviewArr = []
+	header = soup.find("div", id="REVIEWS")
+	info = header.find_all("div", class_="reviewSelector")
+	cnt = 0
+	for review in info:
+		wrap = review.find("div", class_="wrap")
+		if wrap is not None:
+			scale = wrap.find("img")['alt'].split(' ')[0]
+			text = wrap.find("p", class_="partial_entry").contents
+			text = re.sub('<span class="partnerRvw">.*</span>', '', str(text))
+			text = re.sub('<img>.*</img>', '', text)
+			reviewArr.append({"scale":scale, "review":text})
+			cnt = cnt + 1
+		if cnt == 5:
+			break
+	return reviewArr
+
+def getReviewsForFourSquare(soup):
+	reviewArr = []
+	header = soup.find("ul", id="tipsList")
+	info = header.find_all("li", class_="tip tipWithLogging")
+	cnt = 0
+	for review in info:
+		wrap = review.find("div", class_="tipContents").find("p", class_="tipText")
+		if wrap is not None:
+			#text = str(wrap).replace('\', '')
+			text = re.sub('<[^>]*>', '', str(wrap))
+			reviewArr.append({"scale":"", "review":text})
+			cnt = cnt + 1
+		if cnt == 5:
+			break
+	return reviewArr
+
+def getReviewsForYelp(soup):
+	reviewArr = []
+	header = soup.find("ul", class_="ylist-bordered")
+	info = header.find_all("li", recursive=False)
+	cnt = 0
+	for review in info:
+		wrap = review.find("div", class_="review-wrapper").find("p", {"itemprop":"description"})
+		if wrap is not None: 
+			text = wrap.contents[0]
+			text = re.sub('[/\u00a0]*', '', text)
+			scale = review.find("div", class_="review-wrapper").find("meta", {"itemprop":"ratingValue"})['content']
+			reviewArr.append({"scale":scale, "review":text})
+			cnt = cnt + 1
+		if cnt == 5:
+			break
+	print reviewArr
+	return reviewArr
 
 def crawlpage(restaurant_id, restaurant_name, url_list):
 	count = 0
@@ -12,12 +65,14 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 	jsonData = {}
 	data = {}
 	yelp_obj = {}
-	google_obj = {}
+	foursq_obj = {}
 	trip_obj = {}
 	for weburl in url_list:
 		print weburl	
 		page = requests.get(weburl)
 		soup = BeautifulSoup(page.text,'html.parser')
+		for e in soup.findAll('br'):
+    			e.extract()	
 
 		if count == 0:
 			print "yelp"
@@ -29,7 +84,8 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 			print total_reviews
 			yelp_obj['rating'] = overall_rating
 			yelp_obj['count'] = total_reviews
-			yelp_obj['reviews'] = []
+			yelp_obj['reviews'] = getReviewsForYelp(soup)
+			yelp_obj['url'] = weburl
 
 		elif count == 1:
 			print "tripadvisor"
@@ -40,25 +96,27 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 			print total_reviews
 			trip_obj['rating'] = overall_rating
 			trip_obj['count'] = total_reviews
-			trip_obj['reviews'] = []
+			trip_obj['reviews'] = getReviewsForTripAdvisor(soup)
+			trip_obj['url'] = weburl
 
 		elif count == 2:
-			print "googleratings"
-			info = soup.find_all("div", class_="_o0d")[1]
+			print "foursquare"
+			header = soup.find("div", class_="attrBar")
+			info = header.find("div", class_="leftColumn")
 			print info
-			overall_rating = info.find("span", class_="_kgd").contents[0]
-			total_reviews = info.find_all("span")[1].contents[0].split(' ')[1] 
+			overall_rating = info.find("span", {"itemprop":"ratingValue"}).contents[0]
+			total_reviews = info.find("span", {"itemprop":"ratingCount"}).contents[0]
 			print overall_rating
 			print total_reviews
-			google_obj['rating'] = overall_rating
-			google_obj['count'] = total_reviews
-			google_obj['reviews'] = []
-			print google_obj
+			foursq_obj['rating'] = overall_rating
+			foursq_obj['count'] = total_reviews
+			foursq_obj['reviews'] = getReviewsForFourSquare(soup)
+			foursq_obj['url'] = weburl
 
 		count = count + 1
 
 	data['yelp'] = yelp_obj
-	data['googleratings'] = google_obj
+	data['foursquare'] = foursq_obj
 	data['tripadvisor'] = trip_obj
 	jsonData['name'] = restaurant_name
 	jsonData['data'] = data
@@ -69,7 +127,7 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 def crawlCsvAndCreateJsonFile(fileName, jsonfile):
 	ifile  = open(fileName, "rb")
 	jsonFile = open(jsonfile,"w")
-	reader = csv.reader(ifile, delimiter='\t')
+	reader = csv.reader(ifile)
 	rownum = 0
 	mainJson = {}
 	jsonArray = []
@@ -79,10 +137,10 @@ def crawlCsvAndCreateJsonFile(fileName, jsonfile):
 		else:
 			url_list = []
 			rid = row[0]
-			name = row[1]
+			name = 'TEST'
+			url_list.append(row[1])
 			url_list.append(row[2])
 			url_list.append(row[3])
-			url_list.append(row[4])
 		    	json_data = crawlpage(rid, name, url_list)
 			jsonArray.append(json_data)
 		rownum += 1
@@ -93,4 +151,4 @@ def crawlCsvAndCreateJsonFile(fileName, jsonfile):
 	ifile.close()
 	jsonFile.close()
 
-crawlCsvAndCreateJsonFile('test.csv', 'restaurants.json');
+crawlCsvAndCreateJsonFile('sample-restaurants-link.csv', 'restaurants.json');
