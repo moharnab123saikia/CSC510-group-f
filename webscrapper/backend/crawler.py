@@ -7,17 +7,21 @@ import json
 import csv
 import re
 
+def removeNonAscii(s): 
+	return "".join(i for i in s if ord(i)<128)
+
 def getReviewsForTripAdvisor(soup):
 	reviewArr = []
 	header = soup.find("div", id="REVIEWS")
 	info = header.find_all("div", class_="reviewSelector")
 	cnt = 0
 	for review in info:
+		print "id..",review['id']
 		wrap = review.find("div", class_="wrap")
 		if wrap is not None:
 			scale = wrap.find("img")['alt'].split(' ')[0]
-			text = wrap.find("p", class_="partial_entry").contents
-			text = re.sub('<span class="partnerRvw">.*</span>', '', str(text))
+			text = wrap.find("p", class_="partial_entry").contents[0]
+			text = re.sub('<span class="partnerRvw">.*</span>', '', removeNonAscii(text))
 			text = re.sub('<img>.*</img>', '', text)
 			reviewArr.append({"scale":scale, "review":text})
 			cnt = cnt + 1
@@ -33,7 +37,6 @@ def getReviewsForFourSquare(soup):
 	for review in info:
 		wrap = review.find("div", class_="tipContents").find("p", class_="tipText")
 		if wrap is not None:
-			#text = str(wrap).replace('\', '')
 			text = re.sub('<[^>]*>', '', str(wrap))
 			reviewArr.append({"scale":"", "review":text})
 			cnt = cnt + 1
@@ -49,8 +52,7 @@ def getReviewsForYelp(soup):
 	for review in info:
 		wrap = review.find("div", class_="review-wrapper").find("p", {"itemprop":"description"})
 		if wrap is not None: 
-			text = wrap.contents[0]
-			text = re.sub('[/\u00a0]*', '', text)
+			text = removeNonAscii(wrap.contents[0])
 			scale = review.find("div", class_="review-wrapper").find("meta", {"itemprop":"ratingValue"})['content']
 			reviewArr.append({"scale":scale, "review":text})
 			cnt = cnt + 1
@@ -123,7 +125,16 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 	finalJson[restaurant_id] = jsonData
 	return finalJson
 
+def fetchNameFromUrl(url):
+	page = requests.get(url)
+	soup = BeautifulSoup(page.text,'html.parser')
+	name = soup.find("h1", class_="biz-page-title").contents[0]
+	print name
+	return name.strip()
 
+def uploadJsonToServer():
+	print 'in upload'
+	
 def crawlCsvAndCreateJsonFile(fileName, jsonfile):
 	ifile  = open(fileName, "rb")
 	jsonFile = open(jsonfile,"w")
@@ -137,7 +148,7 @@ def crawlCsvAndCreateJsonFile(fileName, jsonfile):
 		else:
 			url_list = []
 			rid = row[0]
-			name = 'TEST'
+			name = fetchNameFromUrl(row[1])
 			url_list.append(row[1])
 			url_list.append(row[2])
 			url_list.append(row[3])
@@ -150,5 +161,6 @@ def crawlCsvAndCreateJsonFile(fileName, jsonfile):
 	jsonFile.write(jsondata)
 	ifile.close()
 	jsonFile.close()
+	uploadJsonToServer()
 
 crawlCsvAndCreateJsonFile('sample-restaurants-link.csv', 'restaurants.json');
