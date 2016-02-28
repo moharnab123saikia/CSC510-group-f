@@ -9,6 +9,7 @@
   	<tbody>
   		<% @restaurants.each do |res| %>
   			<tr>
+          <td><%= image_tag res.photo_url%></td>
   				<td><%= res.name %></td>
   			</tr>
   		<% end %>
