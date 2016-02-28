@@ -16,6 +16,7 @@ for i in 0..number_of_restaurants - 1
 	obj['restaurants'][i].each do |key, value|
 	   res_id = key
 	   name = value["name"]
+	   photo_url = value["photo_url"]
 
        yelp_id = "yelp_" + res_id
 	   yelp_rating = value['data']['yelp']['rating']
@@ -37,7 +38,7 @@ for i in 0..number_of_restaurants - 1
 
        #save in db
 	   review = Review.new :res_id=>res_id, :yelp_id=>yelp_id, :ta_id=>ta_id, 
-	              :fs_id=>fs_id, :name=>name
+	              :fs_id=>fs_id, :name=>name, :photo_url=>photo_url
 	   review.save
 
 	   yelp_review = YelpReview.new :yelp_id=>yelp_id, :rating=>yelp_rating, 
