@@ -3,14 +3,16 @@ package com.example.csc510f.restoscrapper;
 /**
  * Created by Rashmi on 2/21/2016.
  */
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class FetchData implements Runnable  {
 
@@ -79,6 +81,7 @@ public class FetchData implements Runnable  {
                             connection.getInputStream()));
 
             response = new StringBuilder();
+            Log.i("Download","response string is:"+response);
             String inputLine;
 
             while ((inputLine = in.readLine()) != null)
@@ -87,6 +90,7 @@ public class FetchData implements Runnable  {
             in.close();
 
         } catch (Exception  e) {
+            Log.i("Download", "I am in Exception");
             return "";
         }
 
