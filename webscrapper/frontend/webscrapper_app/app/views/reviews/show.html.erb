@@ -1,0 +1,30 @@
+
+
+
+<p>
+  <strong>Name: </strong>
+  <%= @review.name %>
+</p>
+<p>
+  <%= image_tag @review.photo_url%>
+</p>
+
+<p>
+  <strong>Yelp Rating: </strong>
+  <%= @yelp_review.rating %> / <%= @yelp_review.scale %>
+</p>
+
+<p>
+  <strong>Trip Advisor Rating: </strong>
+  <%= @ta_review.rating %> / <%= @ta_review.scale %>
+</p>
+<p>
+  <strong>Foursquare Rating: </strong>
+  <%= @fs_review.rating %> / <%= @fs_review.scale %>
+</p>
+  <hr>
+  <br/>
+	</p>
+  <%= link_to "View all Restaurants", reviews_path %>
+  </p>
+ 
