@@ -6,6 +6,7 @@ from os import getcwd
 import json
 import csv
 import re
+import tinys3
 
 def removeNonAscii(s): 
 	return "".join(i for i in s if ord(i)<128)
@@ -16,11 +17,11 @@ def getReviewsForTripAdvisor(soup):
 	info = header.find_all("div", class_="reviewSelector")
 	cnt = 0
 	for review in info:
-		print "id..",review['id']
+		#print "id..",review['id']
 		wrap = review.find("div", class_="wrap")
 		if wrap is not None:
 			scale = wrap.find("img")['alt'].split(' ')[0]
-			text = wrap.find("p", class_="partial_entry").contents[0]
+			text = wrap.find("p", class_="partial_entry").contents[0].strip()
 			text = re.sub('<span class="partnerRvw">.*</span>', '', removeNonAscii(text))
 			text = re.sub('<img>.*</img>', '', text)
 			reviewArr.append({"scale":scale, "review":text})
@@ -37,7 +38,7 @@ def getReviewsForFourSquare(soup):
 	for review in info:
 		wrap = review.find("div", class_="tipContents").find("p", class_="tipText")
 		if wrap is not None:
-			text = re.sub('<[^>]*>', '', str(wrap))
+			text = removeNonAscii(re.sub('<[^>]*>', '', str(wrap))).strip()
 			reviewArr.append({"scale":"", "review":text})
 			cnt = cnt + 1
 		if cnt == 5:
@@ -52,13 +53,13 @@ def getReviewsForYelp(soup):
 	for review in info:
 		wrap = review.find("div", class_="review-wrapper").find("p", {"itemprop":"description"})
 		if wrap is not None: 
-			text = removeNonAscii(wrap.contents[0])
+			text = removeNonAscii(wrap.contents[0]).strip()
 			scale = review.find("div", class_="review-wrapper").find("meta", {"itemprop":"ratingValue"})['content']
 			reviewArr.append({"scale":scale, "review":text})
 			cnt = cnt + 1
 		if cnt == 5:
 			break
-	print reviewArr
+	#print reviewArr
 	return reviewArr
 
 def crawlpage(restaurant_id, restaurant_name, url_list):
@@ -82,8 +83,8 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 			info = header.find("div", class_="biz-rating")
 			overall_rating = info.find("i", class_="star-img")['title'].split(' ')[0]
 			total_reviews = info.find("span", class_="review-count").find("span").contents[0]
-			print overall_rating
-			print total_reviews
+			#print overall_rating
+			#print total_reviews
 			yelp_obj['rating'] = overall_rating
 			yelp_obj['count'] = total_reviews
 			yelp_obj['reviews'] = getReviewsForYelp(soup)
@@ -94,8 +95,8 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 			info = soup.find("div", class_="rs rating")
 			overall_rating = info.find("img")['content']
 			total_reviews = info.find("a")['content']
-			print overall_rating
-			print total_reviews
+			#print overall_rating
+			#print total_reviews
 			trip_obj['rating'] = overall_rating
 			trip_obj['count'] = total_reviews
 			trip_obj['reviews'] = getReviewsForTripAdvisor(soup)
@@ -105,11 +106,10 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 			print "foursquare"
 			header = soup.find("div", class_="attrBar")
 			info = header.find("div", class_="leftColumn")
-			print info
 			overall_rating = info.find("span", {"itemprop":"ratingValue"}).contents[0]
 			total_reviews = info.find("span", {"itemprop":"ratingCount"}).contents[0]
-			print overall_rating
-			print total_reviews
+			#print overall_rating
+			#print total_reviews
 			foursq_obj['rating'] = overall_rating
 			foursq_obj['count'] = total_reviews
 			foursq_obj['reviews'] = getReviewsForFourSquare(soup)
@@ -129,12 +129,16 @@ def fetchNameFromUrl(url):
 	page = requests.get(url)
 	soup = BeautifulSoup(page.text,'html.parser')
 	name = soup.find("h1", class_="biz-page-title").contents[0]
-	print name
+	print name.strip()
 	return name.strip()
 
 def uploadJsonToServer():
 	print 'in upload'
-	
+	conn = tinys3.Connection('AKIAITSQQ4I64PHL6PKQ','d+9r+dBfB0ppRlWHT+9tED+Ph+mbN0exhJn3g8it',tls=True)
+	f = open('restaurants.json','rb')
+	conn.upload('restaurants.json',f,'restoscrapper')
+
+
 def crawlCsvAndCreateJsonFile(fileName, jsonfile):
 	ifile  = open(fileName, "rb")
 	jsonFile = open(jsonfile,"w")
@@ -156,7 +160,7 @@ def crawlCsvAndCreateJsonFile(fileName, jsonfile):
 			jsonArray.append(json_data)
 		rownum += 1
 	mainJson['restaurants'] = jsonArray
-	print mainJson
+	#print mainJson
 	jsondata = json.dumps(mainJson)
 	jsonFile.write(jsondata)
 	ifile.close()
