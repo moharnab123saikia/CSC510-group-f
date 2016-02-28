@@ -12,6 +12,8 @@ class ReviewsController < ApplicationController
     	@yelp_review = YelpReview.find_by_yelp_id(@yelp_id)
     	@ta_review = TripadvisorReview.find_by_ta_id(@ta_id)
     	@fs_review = FoursquareReview.find_by_fs_id(@fs_id)
+    	@aggregate = ( @yelp_review.rating + @ta_review.rating + ( @fs_review.rating / 2 ) )/ 3
+    	@aggregate = @aggregate.round(1)
 
     end
 
