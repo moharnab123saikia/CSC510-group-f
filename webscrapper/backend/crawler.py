@@ -62,6 +62,12 @@ def getReviewsForYelp(soup):
 	#print reviewArr
 	return reviewArr
 
+def getPhotoUrlFromFourSquare(soup):
+	imgUl = soup.find("ul", class_="photos")
+	imgLi = imgUl.find("li", class_="photo photoWithContent")
+	imgSrc = imgLi.find("img")['src']
+	return imgSrc
+
 def crawlpage(restaurant_id, restaurant_name, url_list):
 	count = 0
 	finalJson = {}
@@ -121,6 +127,7 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 	data['foursquare'] = foursq_obj
 	data['tripadvisor'] = trip_obj
 	jsonData['name'] = restaurant_name
+	jsonData['photo_url'] = getPhotoUrlFromFourSquare(soup) # out of for loop, soup has foursquare data
 	jsonData['data'] = data
 	finalJson[restaurant_id] = jsonData
 	return finalJson
