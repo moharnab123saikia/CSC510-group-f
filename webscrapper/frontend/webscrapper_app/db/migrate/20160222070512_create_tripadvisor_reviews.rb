@@ -6,7 +6,7 @@ class CreateTripadvisorReviews < ActiveRecord::Migration
     	t.integer :scale
     	t.string :url
     	t.string :reviews
-      	t.timestamps null: false
+      t.timestamps null: false
       t.timestamps null: false
     end
   end

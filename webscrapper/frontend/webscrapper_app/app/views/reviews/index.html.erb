@@ -1,0 +1,18 @@
+<h1>Listing Restaurants</h1>
+<% if @restaurants.present? %>
+	<table class="table">
+  	<thead>
+  		<tr>
+  			<th>Name</th>	
+  		</tr>
+  	</thead>
+  	<tbody>
+  		<% @restaurants.each do |res| %>
+  			<tr>
+  				<td><%= res.name %></td>
+  			</tr>
+  		<% end %>
+
+  	</tbody>
+  </table>
+  <% end %>
