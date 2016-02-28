@@ -14,6 +14,11 @@
 ActiveRecord::Schema.define(version: 20160222070534) do
 
   create_table "foursquare_reviews", force: :cascade do |t|
+    t.string   "fs_id"
+    t.float    "rating"
+    t.integer  "scale"
+    t.string   "url"
+    t.string   "reviews"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -21,14 +26,29 @@ ActiveRecord::Schema.define(version: 20160222070534) do
   create_table "reviews", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "res_id"
+    t.string   "yelp_id"
+    t.string   "ta_id"
+    t.string   "fs_id"
+    t.string   "name"
   end
 
   create_table "tripadvisor_reviews", force: :cascade do |t|
+    t.string   "ta_id"
+    t.float    "rating"
+    t.integer  "scale"
+    t.string   "url"
+    t.string   "reviews"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "yelp_reviews", force: :cascade do |t|
+    t.string   "yelp_id"
+    t.float    "rating"
+    t.integer  "scale"
+    t.string   "url"
+    t.string   "reviews"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
