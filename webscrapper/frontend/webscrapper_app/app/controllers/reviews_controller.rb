@@ -16,7 +16,6 @@ class ReviewsController < ApplicationController
     	@aggregate = @aggregate.round(1)
 
     end
-
     def set_review
 
     end
