@@ -19,6 +19,31 @@ class ReviewsController < ApplicationController
                      @fs_review.ratings_count)
     	@aggregate = @aggregate.round(1)
 
+        yelp_reviews = JSON.parse(("{\"reviews\":" + @yelp_review.reviews + "}" ).gsub("=>", ":"))
+        ta_reviews = JSON.parse(("{\"reviews\":" + @ta_review.reviews + "}").gsub("=>", ":"))
+        fs_reviews = JSON.parse(("{\"reviews\":" + @fs_review.reviews + "}").gsub("=>", ":"))
+
+        @yelp_review_text = []
+        @yelp_review_rating = []
+        for i in 0..yelp_reviews['reviews'].count - 1
+            @yelp_review_text[i] = yelp_reviews['reviews'][i]['review']
+            @yelp_review_rating[i] = yelp_reviews['reviews'][i]['scale']
+        end
+
+        @ta_review_text = []
+        @ta_review_rating = []
+        for i in 0..ta_reviews['reviews'].count - 1
+            @ta_review_text[i] = ta_reviews['reviews'][i]['review']
+            @ta_review_rating[i] = ta_reviews['reviews'][i]['scale']
+        end
+
+        @fs_review_text = []
+        @fs_review_rating = []
+        for i in 0..fs_reviews['reviews'].count - 1
+            @fs_review_text[i] = fs_reviews['reviews'][i]['review']
+            @fs_review_rating[i] = fs_reviews['reviews'][i]['scale']
+        end
+
     end
     def set_review
 
