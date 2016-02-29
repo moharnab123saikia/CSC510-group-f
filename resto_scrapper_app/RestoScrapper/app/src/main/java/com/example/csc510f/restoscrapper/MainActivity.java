@@ -13,9 +13,12 @@ import com.example.csc510f.restoscrapper.FetchData.fetch_comp;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 
 
@@ -41,6 +44,8 @@ public class MainActivity extends Activity implements fetch_comp {
         list = (ListView) findViewById(R.id.list);
         adapter = new ListAdapter(this);
         list.setAdapter(adapter);
+
+        EditText searchBox = (EditText)findViewById(R.id.inputSearch);
 
         FetchData json_data = new FetchData((fetch_comp) this);
         json_data.fetch_urldata("https://s3.amazonaws.com/restoscrapper/restaurants.json");
