@@ -1,149 +1,90 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <link href="popup.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>RestoScrapper</title>
-    <meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RestoScrapper</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<script src = "popup.js"></script>
+<script type="text/javascript">changerating();</script>
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
-
-<body class="ng-scope">
-    <nav class="clearfix">
-        <span title="Menu" class="menu"></span>
-        <h3 class="ng-binding">
-    RestoScrapper
-  </h3>
-        <div id="search_wrapper">
-            <input type="text" class="ng-pristine ng-valid filterinput">
-        </div>
-
-        <span class="search"></span>
-
-        <div class="auth_status">
-            <div class="ng-scope">
-                <strong class="ng-binding">Welcome</strong> • <!-- <span id="setting-top">Setting</span> -->
-            </div>
-        </div>
-    </nav>
-
-    <section id="main_view">
-
-        <div id="main_wrapper" class="ng-scope">
-            <div id="pricetree-container-inner" class="content ng-scope hidden">
-                <!--
-<div class="ng-scope">
-    <p>
-      Welcome, Visiting <a href="http://www.pricetree.com" target="_blank"><strong>PriceTree</strong></a> first time?
-    </p>
-    <p>
-      You've not created any price alert yet, go to <a href="http://www.pricetree.com" target="_blank">our website</a> and checkout the "How To" tutorial.
-    </p>
-	<p>
-      Or watch this 5 minutes <a href="https://www.youtube.com/ThePricetree" target="_blank"><strong>YouTube Video</strong></a> to learn how to use PriceTree extension for automatic price comparison, coupons and price drop alert.
-    </p>
-	<p>Thanks and lots of love!</p>
-	<p><a href="http://www.pricetree.com" target="_blank"><img alt="PriceTree" height="100" src="./images/pricetree.jpg"/></a></p>	
-</div>
--->
-
-                <ul id="alert-data" class="list ng-scope">
-
-                </ul>
-                <!--
-	<ul class="list ng-scope">
-					<li class="ng-scope">
-					<a class="pricetree-extension-no-decoration" rel="external nofollow" href="#" title="Buy Nokia XL from Snapdeal" target="_blank">
-					<div class="pricetree_productIcon">
-						<img src="http://img.pricetree.com/large/20130801/nokia-xl-mobile.jpg" alt="Loading..">
-					</div>
-					<div class="pricetree_pdescSlot"><div class="pricetree_productName">Nokia XL Price in India is 23432 and i can check this</div>
-					<div class="pricetree_bestprice">Rs. 7359</div>
-					<img class="pricetree_websitelogo" src="http://img.pricetree.com/stores/snapdeal.jpg" alt="Loading.." align="absmiddle">
-					</div>
-					</a>
-					<div class="actions">
-					<span class="remove" title="Remove">X</span>
-					<span class="share" title="Share"></span></div>
-			      <div class="share_wrapper">
-			        <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.w3schools.com%2Fjsref%2Fmet_element_addeventlistener.asp">Facebook</a>
-			        <a class="twitter" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.w3schools.com%2Fjsref%2Fmet_element_addeventlistener.asp&amp;hashtags=markticle&amp;text=HTML DOM addEventListener() Method">Twitter</a>
-				  </div>
-				</li></ul> -->
-
-                <div id="welcome-content">
-                </div>
-
-                <div id="settings" class="content ng-scope hidden">
-                    <div id="status"></div>
-                    <div class="form_row clearfix">
-                        <label>Review Comparison (Header)</label>
-                        <select id="automatic_price_comparison" class="ng-pristine ng-valid">
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
-                        </select>
-                    </div>
-                    <!-- <div class="form_row clearfix">
-                        <label>Automatic Coupons (Header)</label>
-                        <select id="automatic_coupons" class="ng-pristine ng-valid">
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
-                        </select>
-                    </div>
-                    <div class="form_row clearfix">
-                        <label>Price Alerts (Desktop Notification)</label>
-                        <select id="desktop_price_alerts" class="ng-pristine ng-valid">
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
-                        </select>
-                    </div>
-                    <div class="form_row clearfix">
-                        <label>Price Drop Alert(Sidebar)</label>
-                        <select id="price_alerts_sidebar" class="ng-pristine ng-valid">
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
-                        </select>
-                    </div>
-                    <div class="form_row clearfix">
-                        <label>Price History(Chart/ Graph)</label>
-                        <select id="price_history" class="ng-pristine ng-valid">
-                            <option value="true">Yes</option>
-                            <option value="false">No</option>
-                        </select>
-                    </div> -->
-                    <!--<div class="form_row clearfix">
-		<label>Blocked Domains <span>(PriceTree won't work <br>on blocked domains)</span></label>
-			<textarea ng-model="settings.blockedDomains" placeholder="One URL per line" class="ng-pristine ng-valid"></textarea>
-		</div> -->
-                    <button id="save">Save</button>
-                </div>
-
-
-            </div>
-            <div id="loader">
-                <div class="loader" style="display: block;">
-                    <div class="ball"></div>
-                    <div class="ball"></div>
-                    <div class="ball"></div>
-                </div>
-            </div>
-    </section>
-    <aside id="sidebar">
-        <div>
-            <ul>
-                <li class="myalert selected history">My Alerts</li>
-                <li class="settings">Settings</li>
-            </ul>
-            <div class="bottom">
-                <a href="http://www.restoscrapper.com/" target="_blank">visit RestoScrapper Website</a>
-            </div>
-        </div>
-    </aside>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">RestoScrapper</a></div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="defaultNavbar1">
+      <ul class="nav navbar-nav">
+        <li class="active"></li>
+        <li></li>
+      </ul>
+<ul class="nav navbar-nav navbar-right">
+        <li></li>
+      </ul>
     </div>
-    <script src="jquery.min.js"></script>
-    <script src="popup.js"></script>
-	
-</body>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+<!-- <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h1 class="text-left">Ratings</h1>
+    </div>
+  </div>
+  <hr>
+</div> -->
+<div class="container table-hover">
+<table class="table">
+        <thead>
+            <tr>
+            	<td><strong>Website</strong></td>
+                <td><strong>Ratings</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+        	<tr>
+            	<td>Yelp</td>
+                <td id="rating1">Hello</td>
+            </tr>
+            <tr>
+            	<td>TripAdvisor</td>
+                <td><button type="button"
+onclick="document.getElementById("rating1").innerHTML = 'Hello JavaScript!'">
+Click Me!</button></td>
+            </tr>
+            <tr>
+            	<td>FourSquare</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="text-center col-md-6 col-md-offset-3">
+      <!--<h4>Footer </h4>-->
+      <p>Copyright &copy; 2016 &middot; All Rights Reserved &middot; <a href="http://restoscrapper.com/" >RestoScrapper</a></p>
+    </div>
+  </div>
+  <hr>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.2.min.js"></script>
 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+</body>
 </html>
