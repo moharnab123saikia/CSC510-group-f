@@ -11,7 +11,7 @@
   	<tbody>
   		<% @restaurants.each do |res| %>
   			<tr>
-          		<td><%= image_tag res.photo_url%></td>
+          		<td><%= link_to (image_tag res.photo_url), review_path(res) %></td>
   				<td><%= res.name %></td>
   				<td><%= link_to 'Show Reviews', review_path(res) %></td>
   			</tr>
