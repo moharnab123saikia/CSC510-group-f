@@ -18,9 +18,10 @@ ActiveRecord::Schema.define(version: 20160222070534) do
     t.float    "rating"
     t.integer  "scale"
     t.string   "url"
+    t.integer  "ratings_count"
     t.string   "reviews"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -39,9 +40,10 @@ ActiveRecord::Schema.define(version: 20160222070534) do
     t.float    "rating"
     t.integer  "scale"
     t.string   "url"
+    t.integer  "ratings_count"
     t.string   "reviews"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "yelp_reviews", force: :cascade do |t|
@@ -49,9 +51,10 @@ ActiveRecord::Schema.define(version: 20160222070534) do
     t.float    "rating"
     t.integer  "scale"
     t.string   "url"
+    t.integer  "ratings_count"
     t.string   "reviews"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
 end
