@@ -26,8 +26,9 @@ public class listItem extends Activity {
         TextView resName = (TextView) findViewById(R.id.resName);
         resName.setText(MainActivity.myDataHolder.getRestName(key));
 
-        RatingBar yelpRateBar = (RatingBar)findViewById(R.id.ratingBarYelp);
-        yelpRateBar.setRating(Float.parseFloat(MainActivity.myDataHolder.getyelpRating(key)));
+        RatingBar aggrRateBar = (RatingBar)findViewById(R.id.ratingBarAggr);
+        aggrRateBar.setRating(Float.parseFloat(MainActivity.myDataHolder.getAgrRating(key)));
+        //aggrRateBar.setStepSize(Float.parseFloat(MainActivity.myDataHolder.getAgrRating(key)));
 
         TextView yelpRating = (TextView) findViewById(R.id.yelp);
         yelpRating.setText("Yelp: "+MainActivity.myDataHolder.getyelpRating(key));
