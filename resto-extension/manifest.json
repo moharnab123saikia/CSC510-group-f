@@ -26,7 +26,7 @@
   "content_scripts": [
      {
        "matches": ["http://www.yelp.com/biz*","https://www.yelp.com/biz*","http://www.tripadvisor.com/Restaurant*","https://www.tripadvisor.com/Restaurant*"],
-       "js" : ["contentscript.js"]
+       "js" : ["jquery.js","contentscript.js"]
      }
    ]
   // "web_accessible_resources": [

@@ -1,8 +1,5 @@
 var link = window.location.href;
-// var yelp_link = link.includes("yelp");
-// var ta_link = link.includes("tripadvisor");
-// var fs_link = link.includes("foursquare");
-
+//sending request to get JSON data
 function loadJSON(callback) {   
 
     var xobj = new XMLHttpRequest();
@@ -17,7 +14,7 @@ function loadJSON(callback) {
     xobj.send(null);  
  }
 
-
+//parsing and displaying data to webpage
  function init() {
  loadJSON(function(response) {
   // Parse JSON string into object
@@ -31,22 +28,30 @@ function loadJSON(callback) {
     	data = actual_JSON.restaurants[index];
     	for (res_key in data) {
     		var yelp_url = data[res_key]['data']['yelp']['url'];
+    		var yelp_count = data[res_key]['data']['yelp']['count'];
     		var ta_url = data[res_key]['data']['tripadvisor']['url'];
+    		var ta_count = data[res_key]['data']['tripadvisor']['count'];
     		var fs_url = data[res_key]['data']['foursquare']['url'];
-    		if (link.includes(yelp_url)||yelp_url.includes(link)) {
+    		var fs_count = data[res_key]['data']['foursquare']['count'];
+    		//calculate aggregate rating
+    		var aggregate_rating;
+    		console.log("Y: "+yelp_count+"T: "+ta_count+"F: "+fs_count);
+    		yelp_rating = data[res_key]['data']['yelp']['rating'];
+    		ta_rating = data[res_key]['data']['tripadvisor']['rating'];
+    		fs_rating = data[res_key]['data']['foursquare']['rating'];
+    		console.log("YR: "+yelp_rating+"TR: "+ta_rating+"FR: "+fs_rating);
+    		aggregate_rating = (ta_rating*ta_count + (fs_rating/2.0)*fs_count+yelp_rating*yelp_count)/(ta_count+yelp_count+fs_count);
+
+    		//detecting the type of link
+    		console.log("Aggregate: "+aggregate_rating);
+    		if (link.includes(yelp_url)||yelp_url.includes(link)&&Math.abs(yelp_url.length - link.length)<8) {
     			yelp_link_found = 1;
-    			ta_rating = data[res_key]['data']['tripadvisor']['rating'];
-    			fs_rating = data[res_key]['data']['foursquare']['rating'];
     		}
-    		else if (link.includes(ta_url)||ta_url.includes(link)) {
+    		else if (link.includes(ta_url)||ta_url.includes(link)&&Math.abs(ta_url.length - link.length)<8) {
     			ta_link_found = 1;
-    			yelp_rating = data[res_key]['data']['yelp']['rating'];
-    			fs_rating = data[res_key]['data']['foursquare']['rating'];
     		}
-    		else if (link.includes(fs_url)||fs_url.includes(link)) {
+    		else if (link.includes(fs_url)||fs_url.includes(link)&&Math.abs(fs_url.length - link.length)<8) {
     			fs_link_found = 1;
-    			ta_rating = data[res_key]['data']['tripadvisor']['rating'];
-    			yelp_rating = data[res_key]['data']['yelp']['rating'];
     		}
     	}
     	if (yelp_link_found == 1 || ta_link_found == 1|| fs_link_found == 1) {
@@ -54,13 +59,20 @@ function loadJSON(callback) {
     	}
 	 }
 	 if (yelp_link_found == 1) {
-	 	alert("TripAdvisor Rating: " + ta_rating +"\n\nFourSquare Rating: "+fs_rating );
+	 	
+	 	var display_text = '<div  id="topbar"><h3>TripAdvisor Rating: ' + ta_rating +'\n\nFourSquare Rating: '+ fs_rating +'\n\nAggregate: '+aggregate_rating+'</h3></div >';
+	 	$(document.body).prepend(display_text);
+	 	//alert("TripAdvisor Rating: " + ta_rating +"\n\nFourSquare Rating: "+fs_rating +"\n\nAggregate: "+aggregate_rating);
 	 }
 	 else if (ta_link_found == 1) {
-	 	alert("Yelp Rating:  "+ yelp_rating+"\n\nFourSquare Rating: "+fs_rating);
+	 	var display_text = '<div  id="topbar"><h3>Yelp Rating: ' + yelp_rating +'\n\nFourSquare Rating: '+ fs_rating +'\n\nAggregate: '+aggregate_rating+'</h3></div >';
+	 	$(document.body).prepend(display_text);
+	 	//alert("Yelp Rating:  "+ yelp_rating+"\n\nFourSquare Rating: "+fs_rating+"\n\nAggregate: "+aggregate_rating);
 	 }
 	 else if (fs_link_found == 1) {
-	 	alert("Yelp Rating:  "+yelp_rating+"\n\nTripAdvisor Rating: "+ta_rating);
+	 	var display_text = '<div  id="topbar"><h3>Yelp Rating: ' + yelp_rating +'\n\nTripAdvisor Rating: '+ ta_rating +'\n\nAggregate: '+aggregate_rating+'</h3></div >';
+	 	$(document.body).prepend(display_text);
+	 	//alert("Yelp Rating:  "+yelp_rating+"\n\nTripAdvisor Rating: "+ta_rating+"\n\nAggregate: "+aggregate_rating);
 	 }
 
 
@@ -68,15 +80,3 @@ function loadJSON(callback) {
 }
 
 init();
-
-
-
-
-
-// if(yelp_link)
-//  alert("TripAdvisor Rating:  \n\nFourSquare Rating: ");
-// else if(ta_link)
-// 	alert("Yelp Rating:  \n\nFourSquare Rating: ");
-// else if(fs_link)
-// 	alert("Yelp Rating:  \n\nTripAdvisor Rating: ");
-
