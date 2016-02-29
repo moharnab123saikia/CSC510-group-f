@@ -28,7 +28,44 @@
         android:numStars="5"
         android:stepSize="0.5"
         android:isIndicator="true"
+        android:layout_gravity="center"
         android:rating="2.0" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <TextView
+            android:id="@+id/average_rating_text"
+            android:text="@string/aggR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textSize="20sp"/>
+     <TextView
+        android:id="@+id/average_rating"
+        android:text="@string/hello_world"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:textSize="20sp"/>
+
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/yelptext"
+        android:text="@string/yelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/yelp"
@@ -37,6 +74,21 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="20sp"/>
+
+</LinearLayout>
+
+ <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+     <TextView
+         android:id="@+id/tripAdvisortext"
+         android:text="@string/tripA"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:textColor="@color/black"
+         android:textSize="20sp"/>
+
     <TextView
         android:id="@+id/tripAdvisor"
         android:text="@string/hello_world"
@@ -44,7 +96,19 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="20sp"/>
+ </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/fourSquaretext"
+            android:text="@string/fourS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
     <TextView
         android:id="@+id/fourSquare"
         android:text="@string/hello_world"
@@ -52,14 +116,8 @@
         android:layout_height="wrap_content"
         android:textColor="@color/black"
         android:textSize="20sp"/>
+</LinearLayout>
 
-    <TextView
-        android:id="@+id/average_rating"
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/text"

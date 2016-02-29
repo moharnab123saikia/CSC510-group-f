@@ -31,25 +31,25 @@ public class listItem extends Activity {
         //aggrRateBar.setStepSize(Float.parseFloat(MainActivity.myDataHolder.getAgrRating(key)));
 
         TextView yelpRating = (TextView) findViewById(R.id.yelp);
-        yelpRating.setText("Yelp: "+MainActivity.myDataHolder.getyelpRating(key));
+        yelpRating.setText(" "+MainActivity.myDataHolder.getyelpRating(key)+"/5");
 
         TextView tripRating = (TextView) findViewById(R.id.tripAdvisor);
-        tripRating.setText("TripAdvisor: "+MainActivity.myDataHolder.getTripARating(key));
+        tripRating.setText(" "+MainActivity.myDataHolder.getTripARating(key)+"/5");
 
         TextView fsRating = (TextView) findViewById(R.id.fourSquare);
-        fsRating.setText("FourSquare: "+MainActivity.myDataHolder.getFourSqrRating(key));
+        fsRating.setText(" "+MainActivity.myDataHolder.getFourSqrRating(key)+"/10");
 
         TextView agrRating = (TextView) findViewById(R.id.average_rating);
-        agrRating.setText("Average Rating: "+MainActivity.myDataHolder.getAgrRating(key));
+        agrRating.setText(" "+MainActivity.myDataHolder.getAgrRating(key)+"/5");
 
         TextView review_1 = (TextView) findViewById(R.id.review1);
-        review_1.setText("customer1: "+ MainActivity.myDataHolder.getReviews(key).get(0));
+        review_1.setText("#1: "+ MainActivity.myDataHolder.getReviews(key).get(0));
 
         TextView review_2 = (TextView) findViewById(R.id.review2);
-        review_2.setText("customer2: "+MainActivity.myDataHolder.getReviews(key).get(1));
+        review_2.setText("#2: "+MainActivity.myDataHolder.getReviews(key).get(1));
 
         TextView review_3 = (TextView) findViewById(R.id.review3);
-        review_3.setText("customer3: "+MainActivity.myDataHolder.getReviews(key).get(2));
+        review_3.setText("#3: "+MainActivity.myDataHolder.getReviews(key).get(2));
 
     }
 
