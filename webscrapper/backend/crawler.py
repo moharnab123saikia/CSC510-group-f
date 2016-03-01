@@ -1,3 +1,7 @@
+# Python crawler to fetch the reviews and ratings from yelp, trip advisor and four square
+# for restaurant reviews
+# Author: sbalakr2
+
 import urllib2
 from bs4 import BeautifulSoup
 import requests
@@ -8,9 +12,11 @@ import csv
 import re
 import tinys3
 
+# Method to remove symbols in the restaurant reviews
 def removeNonAscii(s): 
 	return "".join(i for i in s if ord(i)<128)
 
+#Method to fetch the restaurant reviews from trip advisor
 def getReviewsForTripAdvisor(soup):
 	reviewArr = []
 	header = soup.find("div", id="REVIEWS")
@@ -30,6 +36,7 @@ def getReviewsForTripAdvisor(soup):
 			break
 	return reviewArr
 
+#Method to fetch the restaurant reviews from four square
 def getReviewsForFourSquare(soup):
 	reviewArr = []
 	header = soup.find("ul", id="tipsList")
@@ -45,6 +52,7 @@ def getReviewsForFourSquare(soup):
 			break
 	return reviewArr
 
+#Method to fetch the restaurant reviews from yelp.com
 def getReviewsForYelp(soup):
 	reviewArr = []
 	header = soup.find("ul", class_="ylist-bordered")
@@ -62,12 +70,16 @@ def getReviewsForYelp(soup):
 	#print reviewArr
 	return reviewArr
 
+# Method to fetch the url of the photo of the restaurant
+# One image is enough, hence fetching it from four square
 def getPhotoUrlFromFourSquare(soup):
 	imgUl = soup.find("ul", class_="photos")
 	imgLi = imgUl.find("li", class_="photo photoWithContent")
 	imgSrc = imgLi.find("img")['src']
 	return imgSrc
 
+# Method to crawl the three web pages in to get the overall rating
+# and number of reviews for each restaurant
 def crawlpage(restaurant_id, restaurant_name, url_list):
 	count = 0
 	finalJson = {}
@@ -89,8 +101,6 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 			info = header.find("div", class_="biz-rating")
 			overall_rating = info.find("i", class_="star-img")['title'].split(' ')[0]
 			total_reviews = info.find("span", class_="review-count").find("span").contents[0]
-			#print overall_rating
-			#print total_reviews
 			yelp_obj['rating'] = overall_rating
 			yelp_obj['count'] = total_reviews
 			yelp_obj['reviews'] = getReviewsForYelp(soup)
@@ -101,8 +111,6 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 			info = soup.find("div", class_="rs rating")
 			overall_rating = info.find("img")['content']
 			total_reviews = info.find("a")['content']
-			#print overall_rating
-			#print total_reviews
 			trip_obj['rating'] = overall_rating
 			trip_obj['count'] = total_reviews
 			trip_obj['reviews'] = getReviewsForTripAdvisor(soup)
@@ -114,8 +122,6 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 			info = header.find("div", class_="leftColumn")
 			overall_rating = info.find("span", {"itemprop":"ratingValue"}).contents[0]
 			total_reviews = info.find("span", {"itemprop":"ratingCount"}).contents[0]
-			#print overall_rating
-			#print total_reviews
 			foursq_obj['rating'] = overall_rating
 			foursq_obj['count'] = total_reviews
 			foursq_obj['reviews'] = getReviewsForFourSquare(soup)
@@ -132,6 +138,18 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 	finalJson[restaurant_id] = jsonData
 	return finalJson
 
+# Method to upload the given file to Amazon S3 Bucket
+def uploadJsonToServer():
+	print 'in upload'
+	# Connection uses AWS Access Key and Secret Key which are passed below
+	# if changes to the keys, update here
+	accessKey = 'AKIAITSQQ4I64PHL6PKQ'
+	secretKey = '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'
+	conn = tinys3.Connection(accessKey, secretKey,tls=True)
+	f = open('restaurants.json','rb')
+	conn.upload('restaurants.json',f,'restoscrapper')
+
+# Method to fetch restaurant name from the url
 def fetchNameFromUrl(url):
 	page = requests.get(url)
 	soup = BeautifulSoup(page.text,'html.parser')
@@ -139,13 +157,9 @@ def fetchNameFromUrl(url):
 	print name.strip()
 	return name.strip()
 
-def uploadJsonToServer():
-	print 'in upload'
-	conn = tinys3.Connection('AKIAITSQQ4I64PHL6PKQ','d+9r+dBfB0ppRlWHT+9tED+Ph+mbN0exhJn3g8it',tls=True)
-	f = open('restaurants.json','rb')
-	conn.upload('restaurants.json',f,'restoscrapper')
-
-
+# Initially called method to initiate the crawler and
+# create the json file containing the ratings and reviews
+# and finally upload the json in the cloud Amazon AWS S3 Bucket
 def crawlCsvAndCreateJsonFile(fileName, jsonfile):
 	ifile  = open(fileName, "rb")
 	jsonFile = open(jsonfile,"w")
