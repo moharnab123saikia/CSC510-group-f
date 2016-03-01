@@ -168,6 +168,7 @@ def crawlCsvAndCreateJsonFile(fileName, jsonfile):
 	mainJson = {}
 	jsonArray = []
 	for row in reader:
+		#print row
 		if rownum == 0:
 			header = row
 		else:
