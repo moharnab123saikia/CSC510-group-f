@@ -19,6 +19,7 @@
 
   	</tbody>
   </table>
+  <%= paginate @restaurants %>
   <% else %>
     <p>There are no restaurants with the search term(s) <%= params[:search] %>.</p>
 <% end %>

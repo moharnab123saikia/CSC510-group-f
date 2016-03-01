@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 	before_action :set_review
 	def index
-		@restaurants = Review.search(params[:search])
+		@restaurants = Review.search(params[:search]).page(params[:page]).per(4)
     end
 
     def show
