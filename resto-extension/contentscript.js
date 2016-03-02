@@ -62,17 +62,17 @@ function loadJSON(callback) {
 	 }
 	 if (yelp_link_found == 1) {
 	 	
-	 	var display_text = '<div  id="topbar"><h3>TripAdvisor Rating: ' + ta_rating +'\t|    \tFourSquare Rating: '+ fs_rating +'\t|    \tAggregate Rating: '+aggregate_rating_precise+'</h3></div >';
+	 	var display_text = '<div  id="topbar"><h3>TripAdvisor Rating: ' + ta_rating +"/5 ("+ta_count+" reviews)"+'\t|    \tFourSquare Rating: '+ fs_rating +"/10 ("+fs_count+" reviews)"+'\t|    \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
 	 	$(document.body).prepend(display_text);
 	 	//alert("TripAdvisor Rating: " + ta_rating +"\n\nFourSquare Rating: "+fs_rating +"\n\nAggregate: "+aggregate_rating);
 	 }
 	 else if (ta_link_found == 1) {
-	 	var display_text = '<div  id="topbar"><h3>Yelp Rating: ' + yelp_rating +'\t|    \tFourSquare Rating: '+ fs_rating +'\t|    \tAggregate Rating: '+aggregate_rating_precise+'</h3></div >';
+	 	var display_text = '<div  id="topbar"><h3>Yelp Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \tFourSquare Rating: '+ fs_rating +"/10 ("+fs_count+" reviews)"+'\t|    \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
 	 	$(document.body).prepend(display_text);
 	 	//alert("Yelp Rating:  "+ yelp_rating+"\n\nFourSquare Rating: "+fs_rating+"\n\nAggregate: "+aggregate_rating);
 	 }
 	 else if (fs_link_found == 1) {
-	 	var display_text = '<div  id="topbar"><h3>Yelp Rating: ' + yelp_rating +'\t|    \tTripAdvisor Rating: '+ ta_rating +'\t|     \tAggregate Rating: '+aggregate_rating_precise+'</h3></div >';
+	 	var display_text = '<div  id="topbar"><h3>Yelp Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \tTripAdvisor Rating: '+ ta_rating +"/5 ("+ta_count+" reviews)"+'\t|     \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
 	 	$(document.body).prepend(display_text);
 	 	//alert("Yelp Rating:  "+yelp_rating+"\n\nTripAdvisor Rating: "+ta_rating+"\n\nAggregate: "+aggregate_rating);
 	 }
