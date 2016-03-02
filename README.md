@@ -12,4 +12,9 @@
    7. [User Interest] (https://analytics.google.com/analytics/web/?authuser=0#report/visitors-demographics-interest-overview/a74501177w112681598p117712609/)
 5. Demo Time: 3/4/2016 10:30 AM
 6. Code directory: 
+   1. [common base](https://github.com/moharnab123saikia/CSC510-group-f)
+   2. Code for three different solutions
+      1. [Solution 1](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/webscrapper)
+      2. [Solution 2](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/resto_scrapper_app/RestoScrapper)
+      3. [Solution 3](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/resto-extension)
 7. Evaluation Plan:
