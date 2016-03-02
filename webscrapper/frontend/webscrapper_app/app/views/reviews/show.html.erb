@@ -16,16 +16,16 @@
 </p>
 
 <p>
-  <strong>Yelp Rating: </strong>
+  <strong><%=link_to  "Yelp Rating:" , @yelp_review.url%></strong>
   <%= @yelp_review.rating %> / <%= @yelp_review.scale %> (<%= @yelp_review.ratings_count %> ratings)<span class="stars"><%= @yelp_review.rating %></span>
 </p>
 
 <p>
-  <strong>Trip Advisor Rating: </strong>
+  <strong><%=link_to  "Trip Advisor Rating:", @ta_review.url %> </strong>
   <%= @ta_review.rating %> / <%= @ta_review.scale %> (<%= @ta_review.ratings_count %> ratings)<span class="stars"><%= @ta_review.rating %></span>
 </p>
 <p>
-  <strong>Foursquare Rating: </strong>
+  <strong><%=link_to "Foursquare Rating:", @fs_review.url %> </strong>
   <%= @fs_review.rating %> / <%= @fs_review.scale %> (<%= @fs_review.ratings_count %> ratings)<span class="stars10"><%= @fs_review.rating %></span>
 </p>
 <p>
