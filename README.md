@@ -14,7 +14,7 @@
 6. Code directory: 
    1. [common base](https://github.com/moharnab123saikia/CSC510-group-f)
    2. Code for three different solutions
-      1. [Solution 1](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/webscrapper)
-      2. [Solution 2](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/resto_scrapper_app/RestoScrapper)
-      3. [Solution 3](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/resto-extension)
+      1. [Solution 1- Web Scraping application tool for aggregating the rating and reviews. ](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/webscrapper)
+      2. [Solution 2- Android based mobile app for aggregating restaurant reviews and ratings](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/resto_scrapper_app/RestoScrapper)
+      3. [Solution 3 - Chrome plugin to show aggregated ratings from the top websites](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/resto-extension)
 7. Evaluation Plan:
