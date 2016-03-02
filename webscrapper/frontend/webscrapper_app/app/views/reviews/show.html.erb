@@ -11,7 +11,7 @@
   
   <%= @review.name %>
 </h2>
-<p>
+<p class="img-thumbnail">
   <%= image_tag @review.photo_url%>
 </p>
 
@@ -32,8 +32,69 @@
 	<strong>Average Rating: </strong>
 	<%= @aggregate %> / 5 <span class="stars"><%= @aggregate %></span>
 </p>
-  <hr>
-	</p>
+<h3>Reviews</h3>
+
+<table class = "table">
+  <thead>
+    <tr>
+    <th>Source</th>
+    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comments</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Yelp</td>
+      <td>
+        <ul>
+          <%
+            n = @yelp_review_text.count
+            if(n> 3)
+              n = 3;
+            end
+          %>
+          <% n.times do |i|%>
+          <li> <%=@yelp_review_text[i] %></li>
+          <% end %>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Trip Advisor</td>
+      <td>
+        <ul> 
+          <%
+            n = @ta_review_text.count
+            if(n> 3)
+              n = 3;
+            end
+          %>
+          <% n.times do |i|%>
+          <li><%=@ta_review_text[i] %></li>
+          <% end %>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Four Square</td>
+      <td>
+        <ul> 
+          <%
+            n = @fs_review_text.count
+            if(n> 3)
+              n = 3;
+            end
+          %>
+          <% n.times do |i|%>
+          <li><%=@fs_review_text[i] %></li>
+          <% end %>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+  </p>
   <%= link_to "View all Restaurants", reviews_path %>
   </p>
   <p>

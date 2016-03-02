@@ -3,7 +3,7 @@
 	<table class="table">
   	<thead>
   		<tr>
-  			<th>Image</th>
+  			<th></th>
   			<th>Name</th>	
   			<th>Link</th>
   		</tr>
@@ -11,7 +11,7 @@
   	<tbody>
   		<% @restaurants.each do |res| %>
   			<tr>
-          		<td><%= link_to (image_tag( res.photo_url, :size => "170x170")), review_path(res) %></td>
+          		<td><%= link_to (image_tag( res.photo_url, :size => "100x100", class: "img-thumbnail")), review_path(res) %></td>
   				<td><%= res.name %></td>
   				<td><%= link_to 'Show Reviews', review_path(res) %></td>
   			</tr>
@@ -19,7 +19,11 @@
 
   	</tbody>
   </table>
+  <nav>
+  <ul class="pagination">
   <%= paginate @restaurants %>
+  </ul>
+</nav>
   <% else %>
     <p>There are no restaurants with the search term(s) <%= params[:search] %>.</p>
 <% end %>
