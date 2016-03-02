@@ -18,19 +18,14 @@
       2. [Solution 2- Android based mobile app for aggregating restaurant reviews and ratings](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/resto_scrapper_app/RestoScrapper)
       3. [Solution 3 - Chrome plugin to show aggregated ratings from the top websites](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/resto-extension)
 7. Evaluation Plan:
-In order to evaluate the effectiveness of the three solutions, we will be performing telemetry analysis on each of the    three implemented solutions. We are using two tools namely Google Analytics and User Survey Form to collect the telemetry reports. The usage of the tools and the milestones are discussed below.
-   1. Tools for telemetry analysis:
-      1. Google Analytics: With the help of Google Analytics we are planning to track user interactions with the applications including the site usage, type of browser, user interests, site speed, bounce rate, etc. which will help us to understand the effectiveness of the tools we have developed. Each team member is planning to find 6 people to use the different solutions we have implemented. Hence we will have 24 user tests with 8 tests per solution.
-      2. Google Survey Form: In order to collect the user feedback directly from the users we are planning to use a Google Survey Form with a set of questions including the preferred tool, the easiness of usage, etc. We are planning to request the same set of survey participants to provide feedback for the tool they have used.
-      After collecting both the statistical reports we are planning to analyze the effectiveness of the features in        achieving the desired goal. And also we have planned the following milestones for the next deliverable.
-   2. Milestones:
-      1. Milestone 1: Testing and telemetry analysis
+In order to evaluate the effectiveness of the three solutions, we will be performing telemetry analysis on each of the    three implemented solutions. We are using two tools namely Google Analytics and User Survey Form to collect the telemetry reports. With the help of Google Analytics we are planning to track user interactions with the applications including the site usage, type of browser, user interests, site speed, bounce rate, etc. which will help us to understand the effectiveness of the tools we have developed. Each team member is planning to find 6 people to use the different solutions we have implemented. Hence we will have 24 user tests with 8 tests per solution. In order to collect the user feedback directly from the users we are planning to use a Google Survey Form with a set of questions including the preferred tool, the easiness of usage, etc. We are planning to request the same set of survey participants to provide feedback for the tool they have used. After collecting both the statistical reports we are planning to analyze the effectiveness of the features in achieving the desired goal. And also we have planned the following milestones for the next deliverable.
+   1. Milestone 1: Testing and telemetry analysis
          1. Todo Issue 1: testing and telemetry data collection for web scraping application tool
          2. Todo Issue 2: telemetry data collection for android based mobile application
          3. Todo Issue 3: testing and telemetry for chrome browser based plugin
-      2. Milestone 2:  Collection of user logs for analysis
+   2. Milestone 2:  Collection of user logs for analysis
          1. Todo Issue 1: Gathering user logs from google analytics
          2. Todo Issue 2: Collecting the feedback from the user survey
-      3. Milestone 3: Analysis of the user logs to evaluate each solution
+   3. Milestone 3: Analysis of the user logs to evaluate each solution
          1. Todo Issue 1: Telemetry data analysis to decide the best of three implemented tools
          2. Todo Issue 2: Coming up with ideas for feature enhancement to improve user experience.
