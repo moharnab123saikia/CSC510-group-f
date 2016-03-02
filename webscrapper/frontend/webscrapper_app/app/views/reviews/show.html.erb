@@ -17,23 +17,22 @@
 
 <p>
   <strong>Yelp Rating: </strong>
-  <%= @yelp_review.rating %> / <%= @yelp_review.scale %> <span class="stars"><%= @yelp_review.rating %></span>
+  <%= @yelp_review.rating %> / <%= @yelp_review.scale %> (<%= @yelp_review.ratings_count %> ratings)<span class="stars"><%= @yelp_review.rating %></span>
 </p>
 
 <p>
   <strong>Trip Advisor Rating: </strong>
-  <%= @ta_review.rating %> / <%= @ta_review.scale %> <span class="stars"><%= @ta_review.rating %></span>
+  <%= @ta_review.rating %> / <%= @ta_review.scale %> (<%= @ta_review.ratings_count %> ratings)<span class="stars"><%= @ta_review.rating %></span>
 </p>
 <p>
   <strong>Foursquare Rating: </strong>
-  <%= @fs_review.rating %> / <%= @fs_review.scale %> <span class="stars10"><%= @fs_review.rating %></span>
+  <%= @fs_review.rating %> / <%= @fs_review.scale %> (<%= @fs_review.ratings_count %> ratings)<span class="stars10"><%= @fs_review.rating %></span>
 </p>
 <p>
 	<strong>Average Rating: </strong>
 	<%= @aggregate %> / 5 <span class="stars"><%= @aggregate %></span>
 </p>
   <hr>
-  <br/>
 	</p>
   <%= link_to "View all Restaurants", reviews_path %>
   </p>
