@@ -44,6 +44,13 @@ class ReviewsController < ApplicationController
             @fs_review_rating[i] = fs_reviews['reviews'][i]['scale']
         end
 
+       @map = ['dummy']
+       @hash = Gmaps4rails.build_markers(@map) do |user, marker|
+           marker.lat @review.lat
+           marker.lng @review.lon
+       end
+
+
     end
     def set_review
 
