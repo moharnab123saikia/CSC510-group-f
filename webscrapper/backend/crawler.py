@@ -59,7 +59,8 @@ def getReviewsForYelp(soup):
 	info = header.find_all("li", recursive=False)
 	cnt = 0
 	for review in info:
-		wrap = review.find("div", class_="review-wrapper").find("p", {"itemprop":"description"})
+		wrap = review.find("div", class_="review-wrapper")
+		wrap = find("p", {"itemprop":"description"})
 		if wrap is not None: 
 			text = removeNonAscii(wrap.contents[0]).strip()
 			scale = review.find("div", class_="review-wrapper").find("meta", {"itemprop":"ratingValue"})['content']
