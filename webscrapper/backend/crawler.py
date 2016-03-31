@@ -16,6 +16,32 @@ import tinys3
 def removeNonAscii(s): 
 	return "".join(i for i in s if ord(i)<128)
 
+
+#Method to fetch the restaurant reviews from yelp.com
+def getNegativeReviewsForYelp(url):
+	weburl = url + "?sort_by=rating_asc";
+	page = requests.get(weburl)
+	soup = BeautifulSoup(page.text,'html.parser')
+	reviewArr = []
+	header = soup.find("ul", class_="ylist-bordered")
+	info = header.find_all("li", recursive=False)
+	cnt = 0
+	for review in info:
+		wrap1 = review.find("div", class_="review-wrapper")
+		if wrap1 is not None:
+			#print wrap1
+			wrap = wrap1.find("p", {"itemprop":"description"})
+			if wrap is not None: 
+				text = removeNonAscii(wrap.contents[0]).strip()
+				scale = review.find("div", class_="review-wrapper").find("meta", {"itemprop":"ratingValue"})['content']
+				reviewArr.append({"scale":scale, "review":text})
+				cnt = cnt + 1
+		if cnt == 5:
+			break
+	#print reviewArr
+	return reviewArr
+	
+	
 #Method to fetch the restaurant reviews from trip advisor
 def getReviewsForTripAdvisor(soup):
 	reviewArr = []
@@ -59,13 +85,15 @@ def getReviewsForYelp(soup):
 	info = header.find_all("li", recursive=False)
 	cnt = 0
 	for review in info:
-		wrap = review.find("div", class_="review-wrapper")
-		wrap = find("p", {"itemprop":"description"})
-		if wrap is not None: 
-			text = removeNonAscii(wrap.contents[0]).strip()
-			scale = review.find("div", class_="review-wrapper").find("meta", {"itemprop":"ratingValue"})['content']
-			reviewArr.append({"scale":scale, "review":text})
-			cnt = cnt + 1
+		wrap1 = review.find("div", class_="review-wrapper")
+		if wrap1 is not None:
+			#print wrap1
+			wrap = wrap1.find("p", {"itemprop":"description"})
+			if wrap is not None: 
+				text = removeNonAscii(wrap.contents[0]).strip()
+				scale = review.find("div", class_="review-wrapper").find("meta", {"itemprop":"ratingValue"})['content']
+				reviewArr.append({"scale":scale, "review":text})
+				cnt = cnt + 1
 		if cnt == 5:
 			break
 	#print reviewArr
@@ -105,6 +133,7 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 			yelp_obj['rating'] = overall_rating
 			yelp_obj['count'] = total_reviews
 			yelp_obj['reviews'] = getReviewsForYelp(soup)
+			yelp_obj['negativeReviews'] = getNegativeReviewsForYelp(weburl)
 			yelp_obj['url'] = weburl
 
 		elif count == 1:
@@ -115,6 +144,7 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 			trip_obj['rating'] = overall_rating
 			trip_obj['count'] = total_reviews
 			trip_obj['reviews'] = getReviewsForTripAdvisor(soup)
+			trip_obj['negativeReviews'] = []
 			trip_obj['url'] = weburl
 
 		elif count == 2:
@@ -126,6 +156,7 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 			foursq_obj['rating'] = overall_rating
 			foursq_obj['count'] = total_reviews
 			foursq_obj['reviews'] = getReviewsForFourSquare(soup)
+			foursq_obj['negativeReviews'] = []
 			foursq_obj['url'] = weburl
 
 		count = count + 1
@@ -144,18 +175,18 @@ def uploadJsonToServer():
 	print 'in upload'
 	# Connection uses AWS Access Key and Secret Key which are passed below
 	# if changes to the keys, update here
-	accessKey = 'AKIAITSQQ4I64PHL6PKQ'
-	secretKey = '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'
+	accessKey = 'AKIAJKSTJBB7TVBWJVXQ'
+	secretKey = '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'
 	conn = tinys3.Connection(accessKey, secretKey,tls=True)
 	f = open('restaurants.json','rb')
-	conn.upload('restaurants.json',f,'restoscrapper')
+	conn.upload('restaurants.json',f,'restoscrapper-app')
 
 # Method to fetch restaurant name from the url
 def fetchNameFromUrl(url):
 	page = requests.get(url)
 	soup = BeautifulSoup(page.text,'html.parser')
 	name = soup.find("h1", class_="biz-page-title").contents[0]
-	print name.strip()
+	#print name.strip()
 	return name.strip()
 
 # Initially called method to initiate the crawler and
