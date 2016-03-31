@@ -40,7 +40,22 @@ def getNegativeReviewsForYelp(url):
 			break
 	#print reviewArr
 	return reviewArr
+
+def getNegativeReviewsForTripAdvisor(url):
+	reviewArr = []
+	for cnt in range(0,5):
+		scale = ""
+		text = ""
+		reviewArr.append({"scale":scale, "review":text})
+	return reviewArr
 	
+def getNegativeReviewsForFourSquare(url):
+	reviewArr = []
+	for cnt in range(0,5):
+		scale = ""
+		text = ""
+		reviewArr.append({"scale":scale, "review":text})
+	return reviewArr
 	
 #Method to fetch the restaurant reviews from trip advisor
 def getReviewsForTripAdvisor(soup):
@@ -109,7 +124,7 @@ def getPhotoUrlFromFourSquare(soup):
 
 # Method to crawl the three web pages in to get the overall rating
 # and number of reviews for each restaurant
-def crawlpage(restaurant_id, restaurant_name, url_list, lat, lon):
+def crawlpage(restaurant_id, restaurant_name, url_list, lat, lon, res_url):
 	count = 0
 	finalJson = {}
 	jsonData = {}
@@ -145,7 +160,7 @@ def crawlpage(restaurant_id, restaurant_name, url_list, lat, lon):
 			trip_obj['rating'] = overall_rating
 			trip_obj['count'] = total_reviews
 			trip_obj['reviews'] = getReviewsForTripAdvisor(soup)
-			trip_obj['negativeReviews'] = []
+			trip_obj['negativeReviews'] = getNegativeReviewsForTripAdvisor(weburl)
 			trip_obj['url'] = weburl
 
 		elif count == 2:
@@ -157,7 +172,7 @@ def crawlpage(restaurant_id, restaurant_name, url_list, lat, lon):
 			foursq_obj['rating'] = overall_rating
 			foursq_obj['count'] = total_reviews
 			foursq_obj['reviews'] = getReviewsForFourSquare(soup)
-			foursq_obj['negativeReviews'] = []
+			foursq_obj['negativeReviews'] = getNegativeReviewsForFourSquare(weburl)
 			foursq_obj['url'] = weburl
 
 		count = count + 1
@@ -167,6 +182,7 @@ def crawlpage(restaurant_id, restaurant_name, url_list, lat, lon):
 	data['tripadvisor'] = trip_obj
 	jsonData['name'] = restaurant_name
 	jsonData['photo_url'] = getPhotoUrlFromFourSquare(soup) # out of for loop, soup has foursquare data
+	jsonData['res_url'] = res_url
 	loc['lat'] = lat
 	loc['lon'] = lon
 	jsonData['loc'] = loc
@@ -190,8 +206,8 @@ def fetchNameFromUrl(url):
 	page = requests.get(url)
 	soup = BeautifulSoup(page.text,'html.parser')
 	name = soup.find("h1", class_="biz-page-title").contents[0]
-	#print name.strip()
-	return name.strip()
+	print removeNonAscii(name).strip()
+	return removeNonAscii(name).strip()
 
 #def fetchLocFromUrl(url):
 	#loc = ""
@@ -219,13 +235,14 @@ def crawlCsvAndCreateJsonFile(fileName, jsonfile):
 			name = fetchNameFromUrl(row[1])
 			#loc = fetchLocFromUrl(row[1])
 			lat = row[4]
-			print row
+			#print row
 			lon = row[5]
-			print lon
+			#print lon
 			url_list.append(row[1])
 			url_list.append(row[2])
 			url_list.append(row[3])
-		    	json_data = crawlpage(rid, name, url_list, lat, lon)
+			res_url = row[6]
+		    	json_data = crawlpage(rid, name, url_list, lat, lon, res_url)
 			jsonArray.append(json_data)
 		rownum += 1
 	mainJson['restaurants'] = jsonArray
@@ -235,5 +252,6 @@ def crawlCsvAndCreateJsonFile(fileName, jsonfile):
 	ifile.close()
 	jsonFile.close()
 	#uploadJsonToServer()
+	print "done!"
 
 crawlCsvAndCreateJsonFile('sample-restaurants-link.csv', 'restaurants.json');
