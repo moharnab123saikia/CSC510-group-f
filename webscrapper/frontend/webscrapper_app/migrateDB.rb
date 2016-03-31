@@ -25,18 +25,21 @@ for i in 0..number_of_restaurants - 1
 	   yelp_url = value['data']['yelp']['url']
 	   yelp_ratings_count = value['data']['yelp']['count']
 	   yelp_reviews = value['data']['yelp']['reviews']
+	   yelp_neg_reviews = value['data']['yelp']['negativeReviews']
 
        ta_id = "ta_" + res_id
        ta_rating = value['data']['tripadvisor']['rating']
 	   ta_url = value['data']['tripadvisor']['url']
 	   ta_ratings_count = value['data']['tripadvisor']['count']
 	   ta_reviews = value['data']['tripadvisor']['reviews']
+	   ta_neg_reviews = value['data']['tripadvisor']['negativeReviews']
 
        fs_id = "fs_" + res_id
 	   fs_rating = value['data']['foursquare']['rating']
 	   fs_url = value['data']['foursquare']['url']
 	   fs_ratings_count = value['data']['foursquare']['count']
 	   fs_reviews = value['data']['foursquare']['reviews']
+	   fs_neg_reviews = value['data']['foursquare']['negativeReviews']
 
        #save in db
 	   review = Review.new :res_id=>res_id, :yelp_id=>yelp_id, :ta_id=>ta_id, 
@@ -44,15 +47,15 @@ for i in 0..number_of_restaurants - 1
 	   review.save
 
 	   yelp_review = YelpReview.new :yelp_id=>yelp_id, :rating=>yelp_rating, 
-	              :scale=>5, :url=>yelp_url, :ratings_count=>yelp_ratings_count, :reviews=>yelp_reviews
+	              :scale=>5, :url=>yelp_url, :ratings_count=>yelp_ratings_count, :reviews=>yelp_reviews, :neg_reviews=>yelp_neg_reviews
 	   yelp_review.save
 
 	   tripadvisor_review = TripadvisorReview.new :ta_id=>ta_id, :rating=>ta_rating, 
-	              :scale=>5, :url=>ta_url, :ratings_count=>ta_ratings_count, :reviews=>ta_reviews
+	              :scale=>5, :url=>ta_url, :ratings_count=>ta_ratings_count, :reviews=>ta_reviews, :neg_reviews=>ta_neg_reviews
 	   tripadvisor_review.save
 
 	   foursquare_review = FoursquareReview.new :fs_id=>fs_id, :rating=>fs_rating, 
-	              :scale=>10, :url=>fs_url, :ratings_count=>fs_ratings_count, :reviews=>fs_reviews
+	              :scale=>10, :url=>fs_url, :ratings_count=>fs_ratings_count, :reviews=>fs_reviews, :neg_reviews=>fs_neg_reviews
 	   foursquare_review.save
 	end
 end

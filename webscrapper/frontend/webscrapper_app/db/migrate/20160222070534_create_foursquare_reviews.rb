@@ -7,7 +7,7 @@ class CreateFoursquareReviews < ActiveRecord::Migration
     	t.string :url
       t.integer :ratings_count
     	t.string :reviews
-      	t.timestamps null: false
+      t.string :neg_reviews
       t.timestamps null: false
     end
   end

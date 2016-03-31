@@ -7,6 +7,7 @@ class CreateYelpReviews < ActiveRecord::Migration
     	t.string :url
       t.integer :ratings_count
     	t.string :reviews
+      t.string :neg_reviews
       	t.timestamps null: false
     end
   end
