@@ -25,7 +25,7 @@
   },
   "content_scripts": [
      {
-       "matches": ["http://www.yelp.com/biz*","https://www.yelp.com/biz*","http://www.tripadvisor.com/Restaurant*","https://www.tripadvisor.com/Restaurant*"],
+       "matches": ["http://www.yelp.com/biz*","https://www.yelp.com/biz*","http://www.tripadvisor.com/Restaurant*","https://www.tripadvisor.com/Restaurant*", "https://foursquare.com/v/*", "http://foursquare.com/v/*"],
        "js" : ["jquery.js","contentscript.js"]
      }
    ]

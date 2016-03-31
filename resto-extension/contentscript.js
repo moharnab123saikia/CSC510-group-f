@@ -4,7 +4,7 @@ function loadJSON(callback) {
 
     var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'https://s3.amazonaws.com/restoscrapper/restaurants.json', true); // Replace 'my_data' with the path to your file
+    xobj.open('GET', 'https://www.dropbox.com/s/2hgfywixpx6e2a5/restaurants.json?dl=1', true); // Replace 'my_data' with the path to your file
     xobj.onreadystatechange = function () {
           if (xobj.readyState == 4 && xobj.status == "200") {
             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -72,6 +72,7 @@ function loadJSON(callback) {
 	 	//alert("Yelp Rating:  "+ yelp_rating+"\n\nFourSquare Rating: "+fs_rating+"\n\nAggregate: "+aggregate_rating);
 	 }
 	 else if (fs_link_found == 1) {
+        $('#desktopHeader').css('position','relative');
 	 	var display_text = '<div  id="topbar"><h3>Yelp Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \tTripAdvisor Rating: '+ ta_rating +"/5 ("+ta_count+" reviews)"+'\t|     \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
 	 	$(document.body).prepend(display_text);
 	 	//alert("Yelp Rating:  "+yelp_rating+"\n\nTripAdvisor Rating: "+ta_rating+"\n\nAggregate: "+aggregate_rating);

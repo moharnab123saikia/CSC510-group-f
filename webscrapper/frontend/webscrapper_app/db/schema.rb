@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 20160222070534) do
     t.string   "fs_id"
     t.string   "name"
     t.string   "photo_url"
+    t.float    "lat"
+    t.float    "lon"
   end
 
   create_table "tripadvisor_reviews", force: :cascade do |t|
