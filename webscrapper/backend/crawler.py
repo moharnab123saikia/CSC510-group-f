@@ -109,7 +109,7 @@ def getPhotoUrlFromFourSquare(soup):
 
 # Method to crawl the three web pages in to get the overall rating
 # and number of reviews for each restaurant
-def crawlpage(restaurant_id, restaurant_name, url_list):
+def crawlpage(restaurant_id, restaurant_name, url_list, lat, lon):
 	count = 0
 	finalJson = {}
 	jsonData = {}
@@ -117,6 +117,7 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 	yelp_obj = {}
 	foursq_obj = {}
 	trip_obj = {}
+	loc = {}
 	for weburl in url_list:
 		print weburl	
 		page = requests.get(weburl)
@@ -166,6 +167,9 @@ def crawlpage(restaurant_id, restaurant_name, url_list):
 	data['tripadvisor'] = trip_obj
 	jsonData['name'] = restaurant_name
 	jsonData['photo_url'] = getPhotoUrlFromFourSquare(soup) # out of for loop, soup has foursquare data
+	loc['lat'] = lat
+	loc['lon'] = lon
+	jsonData['loc'] = loc
 	jsonData['data'] = data
 	finalJson[restaurant_id] = jsonData
 	return finalJson
@@ -189,6 +193,12 @@ def fetchNameFromUrl(url):
 	#print name.strip()
 	return name.strip()
 
+#def fetchLocFromUrl(url):
+	#loc = ""
+	#page = requests.get(url)
+	#soup = BeautifulSoup(page.text,'html.parser')
+	#div = soup.find("div", class_="lightbox-map")
+	
 # Initially called method to initiate the crawler and
 # create the json file containing the ratings and reviews
 # and finally upload the json in the cloud Amazon AWS S3 Bucket
@@ -207,10 +217,15 @@ def crawlCsvAndCreateJsonFile(fileName, jsonfile):
 			url_list = []
 			rid = row[0]
 			name = fetchNameFromUrl(row[1])
+			#loc = fetchLocFromUrl(row[1])
+			lat = row[4]
+			print row
+			lon = row[5]
+			print lon
 			url_list.append(row[1])
 			url_list.append(row[2])
 			url_list.append(row[3])
-		    	json_data = crawlpage(rid, name, url_list)
+		    	json_data = crawlpage(rid, name, url_list, lat, lon)
 			jsonArray.append(json_data)
 		rownum += 1
 	mainJson['restaurants'] = jsonArray
@@ -219,6 +234,6 @@ def crawlCsvAndCreateJsonFile(fileName, jsonfile):
 	jsonFile.write(jsondata)
 	ifile.close()
 	jsonFile.close()
-	uploadJsonToServer()
+	#uploadJsonToServer()
 
 crawlCsvAndCreateJsonFile('sample-restaurants-link.csv', 'restaurants.json');
