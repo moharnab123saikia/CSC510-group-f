@@ -44,11 +44,23 @@ class ReviewsController < ApplicationController
             @fs_review_rating[i] = fs_reviews['reviews'][i]['scale']
         end
 
+
+        #negative reviews
+        yelp_neg_reviews = JSON.parse(("{\"neg_reviews\":" + @yelp_review.neg_reviews + "}" ).gsub("=>", ":"))
+        @yelp_neg_review_text = []
+        @yelp_neg_review_rating = []
+        for i in 0..yelp_neg_reviews['neg_reviews'].count - 1
+            @yelp_neg_review_text[i] = yelp_neg_reviews['neg_reviews'][i]['review']
+            @yelp_neg_review_rating[i] = yelp_neg_reviews['neg_reviews'][i]['scale']
+        end
+
        @map = ['dummy']
        @hash = Gmaps4rails.build_markers(@map) do |user, marker|
            marker.lat @review.lat
            marker.lng @review.lon
        end
+
+
 
 
     end
