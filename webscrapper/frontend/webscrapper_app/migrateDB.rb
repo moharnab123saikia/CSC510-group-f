@@ -17,6 +17,7 @@ for i in 0..number_of_restaurants - 1
 	   res_id = key
 	   name = value["name"]
 	   photo_url = value["photo_url"]
+	   res_url = value["res_url"]
 	   lat = value["loc"]["lat"]
 	   lon = value["loc"]["lon"]
 
@@ -43,7 +44,7 @@ for i in 0..number_of_restaurants - 1
 
        #save in db
 	   review = Review.new :res_id=>res_id, :yelp_id=>yelp_id, :ta_id=>ta_id, 
-	              :fs_id=>fs_id, :name=>name, :photo_url=>photo_url, :lat=>lat, :lon=>lon
+	              :fs_id=>fs_id, :name=>name, :photo_url=>photo_url, :res_url=>res_url, :lat=>lat, :lon=>lon
 	   review.save
 
 	   yelp_review = YelpReview.new :yelp_id=>yelp_id, :rating=>yelp_rating, 

@@ -9,6 +9,7 @@ class CreateReviews < ActiveRecord::Migration
       t.string :fs_id
       t.string :name
       t.string :photo_url
+      t.string :res_url
       t.float :lat
       t.float :lon
     end
