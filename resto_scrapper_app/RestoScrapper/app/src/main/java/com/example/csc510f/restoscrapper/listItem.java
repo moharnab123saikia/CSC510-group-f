@@ -2,11 +2,14 @@ package com.example.csc510f.restoscrapper;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -50,6 +53,32 @@ public class listItem extends Activity {
 
         TextView review_3 = (TextView) findViewById(R.id.review3);
         review_3.setText("#3: "+MainActivity.myDataHolder.getReviews(key).get(2));
+
+       // Log.i("negreviewLog", MainActivity.myDataHolder.getNegReviews(key).get(0));
+
+        TextView negreview_1 = (TextView) findViewById(R.id.negreview1);
+        negreview_1.setText("#1: "+ MainActivity.myDataHolder.getNegReviews(key).get(0));
+
+       // Log.i("negreviewlog", MainActivity.myDataHolder.getNegReviews(key).get(1));
+        TextView negreview_2 = (TextView) findViewById(R.id.negreview2);
+        negreview_2.setText("#2: "+MainActivity.myDataHolder.getNegReviews(key).get(1));
+
+        //Log.i("negreviewlog", MainActivity.myDataHolder.getNegReviews(key).get(2));
+
+        TextView negreview_3 = (TextView) findViewById(R.id.negreview3);
+        negreview_3.setText("#3: "+MainActivity.myDataHolder.getNegReviews(key).get(2));
+
+        final String url = MainActivity.myDataHolder.getResUrl(key);
+
+        Button button = (Button)findViewById(R.id.btn);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+                Intent viewIntent =
+                        new Intent("android.intent.action.VIEW",
+                                Uri.parse(url));
+                startActivity(viewIntent);
+            }
+        });
 
     }
 

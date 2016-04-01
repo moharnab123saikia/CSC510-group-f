@@ -1,5 +1,7 @@
 package com.example.csc510f.restoscrapper;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -9,12 +11,14 @@ import java.util.HashMap;
 public class dataHolder {
 
     private HashMap<String,String>name_res;
+    private HashMap<String,String>url_res;
     private HashMap<String,String>rating_foursq;
     private HashMap<String,String>rating_tripA;
     private HashMap<String,String>rating_yelp;
     private HashMap<String,String>rating_aggr;
     //public HashMap<String,String>res_url;
     private HashMap<String,ArrayList<String>>reviews;
+    private HashMap<String,ArrayList<String>>negreviews;
 
     public String getRestName(String key)
     {
@@ -37,13 +41,26 @@ public class dataHolder {
     {
         return rating_aggr.get(key);
     }
+    public String getResUrl(String key)
+    {
+        return url_res.get(key);
+    }
     public ArrayList<String> getReviews(String key)
     {
         return reviews.get(key);
     }
+    public ArrayList<String> getNegReviews(String key)
+    {
+        //Log.i("dataholder", negreviews.get(key).get(0));
+        return negreviews.get(key);
+    }
     public void setNameRes(HashMap<String,String>name_res)
     {
         this.name_res = name_res;
+    }
+    public void setResUrl(HashMap<String,String>url_res)
+    {
+        this.url_res = url_res;
     }
     public void setFourSqRating(HashMap<String,String>rating_foursq)
     {
@@ -66,6 +83,10 @@ public class dataHolder {
     public void setReviews(HashMap<String,ArrayList<String>>reviews)
     {
         this.reviews = reviews;
+    }
+    public void setNegReviews(HashMap<String,ArrayList<String>>negreviews)
+    {
+        this.negreviews = negreviews;
     }
 
 //    private static final DataHolder holder = new DataHolder();
