@@ -5,8 +5,10 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_list_item">listItem</string>
     <string name="review"><b>Customer Reviews: </b></string>
+    <string name="negreview"><b>Negative Reviews: </b></string>
     <string name="yelp">Yelp:  </string>
     <string name="tripA">TripAdvisor:  </string>
     <string name="fourS">FourSquare:  </string>
     <string name="aggR"><b>Aggregate Rating:  </b></string>
+    <string name="btn_text"><b>Book Now </b></string>
 </resources>
