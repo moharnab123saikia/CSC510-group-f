@@ -195,8 +195,8 @@ def uploadJsonToServer():
 	print 'in upload'
 	# Connection uses AWS Access Key and Secret Key which are passed below
 	# if changes to the keys, update here
-	accessKey = 'AKIAJKSTJBB7TVBWJVXQ'
-	secretKey = '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'
+	accessKey = ''
+	secretKey = ''
 	conn = tinys3.Connection(accessKey, secretKey,tls=True)
 	f = open('restaurants.json','rb')
 	conn.upload('restaurants.json',f,'restoscrapper-app')
