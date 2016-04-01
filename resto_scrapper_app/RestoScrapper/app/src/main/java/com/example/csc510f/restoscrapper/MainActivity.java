@@ -21,6 +21,9 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+
 
 public class MainActivity extends Activity implements fetch_comp {
 
@@ -35,11 +38,16 @@ public class MainActivity extends Activity implements fetch_comp {
     //public HashMap<String,String>res_url;
     public HashMap<String,ArrayList<String>>reviews = new HashMap<String,ArrayList<String>>();
     public static dataHolder myDataHolder = new dataHolder();
+    private Tracker mTracker;
+    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        AnalyticsApplication application = (AnalyticsApplication) getApplication();
+        mTracker = application.getDefaultTracker();
 
         list = (ListView) findViewById(R.id.list);
         adapter = new ListAdapter(this);
@@ -48,7 +56,7 @@ public class MainActivity extends Activity implements fetch_comp {
         EditText searchBox = (EditText)findViewById(R.id.inputSearch);
 
         FetchData json_data = new FetchData((fetch_comp) this);
-        json_data.fetch_urldata("https://s3.amazonaws.com/restoscrapper/restaurants.json");
+        json_data.fetch_urldata("https://s3-us-west-2.amazonaws.com/restoscrapper-app/restaurants.json");
 
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
@@ -67,6 +75,14 @@ public class MainActivity extends Activity implements fetch_comp {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();  // Always call the superclass method first
+//        Log.i(TAG, "Setting screen name: " );
+//        mTracker.setScreenName("Image~" );
+//        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+
+    }
 
 
     public void get_data(String data)
