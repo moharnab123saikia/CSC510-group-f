@@ -85,7 +85,7 @@ handler.buildMap({ provider: {maxZoom: 18}, internal: {id: 'map'}}, function(){
             end
           %>
           <% n.times do |i|%>
-          <li> <%=@yelp_review_text[i] %></li>
+          <li> <%=@yelp_review_text[i] %><br><span class="stars"><%=@yelp_review_rating[i] %></span></li>
           <% end %>
         </ul>
       </td>
@@ -101,7 +101,7 @@ handler.buildMap({ provider: {maxZoom: 18}, internal: {id: 'map'}}, function(){
             end
           %>
           <% n.times do |i|%>
-          <li><%=@ta_review_text[i] %></li>
+          <li><%=@ta_review_text[i] %><br><span class="stars"><%=@ta_review_rating[i] %></span></li>
           <% end %>
         </ul>
       </td>
@@ -117,7 +117,7 @@ handler.buildMap({ provider: {maxZoom: 18}, internal: {id: 'map'}}, function(){
             end
           %>
           <% n.times do |i|%>
-          <li><%=@fs_review_text[i] %></li>
+          <li><%=@fs_review_text[i] %><br><span class="stars10"><%=@fs_review_rating[i] %></span></li>
           <% end %>
         </ul>
       </td>
