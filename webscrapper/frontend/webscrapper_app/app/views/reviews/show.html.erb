@@ -21,30 +21,28 @@
   <div class = "col-md-4">
     <div class = "img-thumbnail">
     <%= image_tag @review.photo_url%>
-  </div>
+    </div>
 
 
-<br>
-<br>
-<p>
-  <strong><%=link_to  "Yelp Rating:" , @yelp_review.url%></strong>
-  <%= @yelp_review.rating %> / <%= @yelp_review.scale %> (<%= @yelp_review.ratings_count %> ratings)<span class="stars"><%= @yelp_review.rating %></span>
-</p>
+    <br>
+    <br>
+    <p>
+      <strong><%=link_to  "Yelp Rating:" , @yelp_review.url%></strong>
+      <%= @yelp_review.rating %> / <%= @yelp_review.scale %> (<%= @yelp_review.ratings_count %> ratings)<span class="stars"><%= @yelp_review.rating %></span>
+    </p>
 
-<p>
-  <strong><%=link_to  "Trip Advisor Rating:", @ta_review.url %> </strong>
-  <%= @ta_review.rating %> / <%= @ta_review.scale %> (<%= @ta_review.ratings_count %> ratings)<span class="stars"><%= @ta_review.rating %></span>
-</p>
-<p>
-  <strong><%=link_to "Foursquare Rating:", @fs_review.url %> </strong>
-  <%= @fs_review.rating %> / <%= @fs_review.scale %> (<%= @fs_review.ratings_count %> ratings)<span class="stars10"><%= @fs_review.rating %></span>
-</p>
-<p>
-  <strong>Average Rating: </strong>
-  <%= @aggregate %> / 5 <span class="stars"><%= @aggregate %></span>
-</p>
-
-
+    <p>
+      <strong><%=link_to  "Trip Advisor Rating:", @ta_review.url %> </strong>
+      <%= @ta_review.rating %> / <%= @ta_review.scale %> (<%= @ta_review.ratings_count %> ratings)<span class="stars"><%= @ta_review.rating %></span>
+    </p>
+    <p>
+      <strong><%=link_to "Foursquare Rating:", @fs_review.url %> </strong>
+      <%= @fs_review.rating %> / <%= @fs_review.scale %> (<%= @fs_review.ratings_count %> ratings)<span class="stars10"><%= @fs_review.rating %></span>
+    </p>
+    <p>
+      <strong>Average Rating: </strong>
+      <%= @aggregate %> / 5 <span class="stars"><%= @aggregate %></span>
+    </p>
   </div>
   <div class = "img-thumbnail">
   <div id="map" style='width: 380px; height: 380px;' class = "col-md-4">
@@ -64,96 +62,99 @@ handler.buildMap({ provider: {maxZoom: 18}, internal: {id: 'map'}}, function(){
 </script>
 
 <br/>
-<h3>Reviews</h3>
+<div class = "row">
+  <div class="col-md-6">
+    <h3>Top Reviews</h3>
+    <table class = "table">
+      <thead>
+        <tr>
+        <th>Source</th>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comments</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Yelp</td>
+          <td>
+            <ul>
+              <%
+                n = @yelp_review_text.count
+                if(n> 3)
+                  n = 3;
+                end
+              %>
+              <% n.times do |i|%>
+              <li> <%=@yelp_review_text[i] %><br><span class="stars"><%=@yelp_review_rating[i] %></span></li>
+              <% end %>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Trip Advisor</td>
+          <td>
+            <ul> 
+              <%
+                n = @ta_review_text.count
+                if(n> 3)
+                  n = 3;
+                end
+              %>
+              <% n.times do |i|%>
+              <li><%=@ta_review_text[i] %><br><span class="stars"><%=@ta_review_rating[i] %></span></li>
+              <% end %>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>Four Square</td>
+          <td>
+            <ul> 
+              <%
+                n = @fs_review_text.count
+                if(n> 3)
+                  n = 3;
+                end
+              %>
+              <% n.times do |i|%>
+              <li><%=@fs_review_text[i] %><br><span class="stars10"><%=@fs_review_rating[i] %></span></li>
+              <% end %>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class = "col-md-6">
 
-<table class = "table">
-  <thead>
-    <tr>
-    <th>Source</th>
-    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comments</th>
-  </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Yelp</td>
-      <td>
-        <ul>
-          <%
-            n = @yelp_review_text.count
-            if(n> 3)
-              n = 3;
-            end
-          %>
-          <% n.times do |i|%>
-          <li> <%=@yelp_review_text[i] %><br><span class="stars"><%=@yelp_review_rating[i] %></span></li>
-          <% end %>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>Trip Advisor</td>
-      <td>
-        <ul> 
-          <%
-            n = @ta_review_text.count
-            if(n> 3)
-              n = 3;
-            end
-          %>
-          <% n.times do |i|%>
-          <li><%=@ta_review_text[i] %><br><span class="stars"><%=@ta_review_rating[i] %></span></li>
-          <% end %>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>Four Square</td>
-      <td>
-        <ul> 
-          <%
-            n = @fs_review_text.count
-            if(n> 3)
-              n = 3;
-            end
-          %>
-          <% n.times do |i|%>
-          <li><%=@fs_review_text[i] %><br><span class="stars10"><%=@fs_review_rating[i] %></span></li>
-          <% end %>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>Negative Reviews</h3>
-<table class = "table">
-  <thead>
-    <tr>
-    <!-- <th>Score</th> -->
-    <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comments</th>
-  </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <!-- <td>Yelp</td> -->
-      <td>
-        <ul>
-          <%
-            n = @yelp_neg_review_text.count
-            if(n> 3)
-              n = 3;
-            end
-          %>
-          <% n.times do |i|%>
-          <li> <%=@yelp_neg_review_text[i] %><br><span class="stars"><%=@yelp_neg_review_rating[i] %></span></li>
-          <% end %>
-        </ul>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-
+    <h3>Negative Reviews</h3>
+    <table class = "table">
+      <thead>
+        <tr>
+        <!-- <th>Score</th> -->
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Comments</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- <td>Yelp</td> -->
+          <td>
+            <ul>
+              <%
+                n = @yelp_neg_review_text.count
+                if(n> 3)
+                  n = 3;
+                end
+              %>
+              <% n.times do |i|%>
+              <li> <%=@yelp_neg_review_text[i] %><br><span class="stars"><%=@yelp_neg_review_rating[i] %></span></li>
+              <% end %>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 <hr>
 
   </p>
