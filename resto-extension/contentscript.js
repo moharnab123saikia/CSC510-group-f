@@ -60,23 +60,21 @@ function loadJSON(callback) {
     		break;
     	}
 	 }
+
+     //displaying the info on the extension
 	 if (yelp_link_found == 1) {
-	 	
-	 	var display_text = '<div  id="topbar"><h3>TripAdvisor Rating: ' + ta_rating +"/5 ("+ta_count+" reviews)"+'\t|    \tFourSquare Rating: '+ fs_rating +"/10 ("+fs_count+" reviews)"+'\t|    \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
-	 	$(document.body).prepend(display_text);
-	 	//alert("TripAdvisor Rating: " + ta_rating +"\n\nFourSquare Rating: "+fs_rating +"\n\nAggregate: "+aggregate_rating);
+	 	var display_text = '<div  id="topbar"><h3><a href ='+ ta_url+' >TripAdvisor</a> Rating: ' + ta_rating +"/5 ("+ta_count+" reviews)"+'\t|    \t<a href ='+ fs_url+' >FourSquare</a> Rating: '+ fs_rating +"/10 ("+fs_count+" reviews)"+'\t|    \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
 	 }
 	 else if (ta_link_found == 1) {
-	 	var display_text = '<div  id="topbar"><h3>Yelp Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \tFourSquare Rating: '+ fs_rating +"/10 ("+fs_count+" reviews)"+'\t|    \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
-	 	$(document.body).prepend(display_text);
-	 	//alert("Yelp Rating:  "+ yelp_rating+"\n\nFourSquare Rating: "+fs_rating+"\n\nAggregate: "+aggregate_rating);
+	 	var display_text = '<div  id="topbar"><h3><h3><a href ='+ yelp_url+' >Yelp</a> Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \t<a href ='+ fs_url+' >FourSquare</a> Rating: '+ fs_rating +"/10 ("+fs_count+" reviews)"+'\t|    \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
 	 }
 	 else if (fs_link_found == 1) {
         $('#desktopHeader').css('position','relative');
-	 	var display_text = '<div  id="topbar"><h3>Yelp Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \tTripAdvisor Rating: '+ ta_rating +"/5 ("+ta_count+" reviews)"+'\t|     \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
-	 	$(document.body).prepend(display_text);
-	 	//alert("Yelp Rating:  "+yelp_rating+"\n\nTripAdvisor Rating: "+ta_rating+"\n\nAggregate: "+aggregate_rating);
+	 	var display_text = '<div  id="topbar"><h3><h3><a href ='+ yelp_url+' >Yelp</a> Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \t<a href ='+ ta_url+' >TripAdvisor</a> Rating: '+ ta_rating +"/5 ("+ta_count+" reviews)"+'\t|     \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
 	 }
+
+     display_text += '<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Book Now</span></button>';
+     $(document.body).prepend(display_text);
 
 
  });
