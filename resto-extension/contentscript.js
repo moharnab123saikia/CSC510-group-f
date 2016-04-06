@@ -4,7 +4,7 @@ function loadJSON(callback) {
 
     var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
-    xobj.open('GET', 'https://www.dropbox.com/s/2hgfywixpx6e2a5/restaurants.json?dl=1', true); // Replace 'my_data' with the path to your file
+    xobj.open('GET', 'https://www.dropbox.com/s/qm7odahzxf06ghx/restaurants.json?dl=1', true); // Replace 'my_data' with the path to your file
     xobj.onreadystatechange = function () {
           if (xobj.readyState == 4 && xobj.status == "200") {
             // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -24,9 +24,11 @@ function loadJSON(callback) {
     var yelp_link_found = 0;
     var ta_link_found = 0;
     var fs_link_found = 0;
+    var res_url;
     for(index in actual_JSON.restaurants) {
     	data = actual_JSON.restaurants[index];
     	for (res_key in data) {
+            res_url = data[res_key]['res_url'];
     		var yelp_url = data[res_key]['data']['yelp']['url'];
     		var yelp_count = parseInt(data[res_key]['data']['yelp']['count']);
     		var ta_url = data[res_key]['data']['tripadvisor']['url'];
@@ -63,17 +65,17 @@ function loadJSON(callback) {
 
      //displaying the info on the extension
 	 if (yelp_link_found == 1) {
-	 	var display_text = '<div  id="topbar"><h3><a href ='+ ta_url+' >TripAdvisor</a> Rating: ' + ta_rating +"/5 ("+ta_count+" reviews)"+'\t|    \t<a href ='+ fs_url+' >FourSquare</a> Rating: '+ fs_rating +"/10 ("+fs_count+" reviews)"+'\t|    \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
+	 	var display_text = '<div  id="topbar"><h3><a href ='+ ta_url+ ' title="View details in TripAdvisor" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘Trip Advisor Link’]);”>TripAdvisor</a> Rating: ' + ta_rating +"/5 ("+ta_count+" reviews)"+'\t|    \t<a href ='+ fs_url+' title="View details in FourSquare" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘FourSquare Link’]);”>FourSquare</a> Rating: '+ fs_rating +"/10 ("+fs_count+" reviews)"+'\t|    \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
 	 }
 	 else if (ta_link_found == 1) {
-	 	var display_text = '<div  id="topbar"><h3><h3><a href ='+ yelp_url+' >Yelp</a> Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \t<a href ='+ fs_url+' >FourSquare</a> Rating: '+ fs_rating +"/10 ("+fs_count+" reviews)"+'\t|    \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
+	 	var display_text = '<div  id="topbar"><h3><h3><a href ='+ yelp_url+' title="View details in Yelp" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘Yelp Link’]);”>Yelp</a> Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \t<a href ='+ fs_url+' title="View details in FourSquare" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘FourSquare Link’]);”>FourSquare</a> Rating: '+ fs_rating +"/10 ("+fs_count+" reviews)"+'\t|    \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
 	 }
 	 else if (fs_link_found == 1) {
         $('#desktopHeader').css('position','relative');
-	 	var display_text = '<div  id="topbar"><h3><h3><a href ='+ yelp_url+' >Yelp</a> Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \t<a href ='+ ta_url+' >TripAdvisor</a> Rating: '+ ta_rating +"/5 ("+ta_count+" reviews)"+'\t|     \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
+	 	var display_text = '<div  id="topbar"><h3><h3><a href ='+ yelp_url+' title="View details in Yelp" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘Yelp Link’]);”> >Yelp</a> Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \t<a href ='+ ta_url+' title="View details in TripAdvisor" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘Trip Advisor Link’]);”>TripAdvisor</a> Rating: '+ ta_rating +"/5 ("+ta_count+" reviews)"+'\t|     \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
 	 }
 
-     display_text += '<button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button"><span class="ui-button-text">Book Now</span></button>';
+     display_text += '<form method="LINK" ACTION="'+res_url+'"><INPUT TYPE="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" VALUE="Book Now"></form>';
      $(document.body).prepend(display_text);
 
 
