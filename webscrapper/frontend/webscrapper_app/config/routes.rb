@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post 'reviews/yelp' => 'reviews#yelp', as: :yelp
   post 'reviews/fs' => 'reviews#fs', as: :fs
   post 'reviews/ta' => 'reviews#ta', as: :ta
+  resources :usages
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160222070534) do
+ActiveRecord::Schema.define(version: 20160407051223) do
 
   create_table "foursquare_reviews", force: :cascade do |t|
     t.string   "fs_id"
@@ -49,6 +49,17 @@ ActiveRecord::Schema.define(version: 20160222070534) do
     t.string   "neg_reviews"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+  end
+
+  create_table "usages", force: :cascade do |t|
+    t.string   "res_id"
+    t.integer  "show_count"
+    t.integer  "yelp_count"
+    t.integer  "fs_count"
+    t.integer  "ta_count"
+    t.integer  "book_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "yelp_reviews", force: :cascade do |t|

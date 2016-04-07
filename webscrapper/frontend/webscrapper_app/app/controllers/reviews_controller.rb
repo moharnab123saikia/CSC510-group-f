@@ -6,6 +6,11 @@ class ReviewsController < ApplicationController
 
     def show
     	@review = Review.find(params[:id])
+        res_id = @review.res_id
+        usage = Usage.find_by_res_id(res_id)
+        show_count = usage.show_count
+        show_count = show_count + 1
+        usage.update(show_count: show_count)
     	@yelp_id = @review.yelp_id
     	@ta_id = @review.ta_id
     	@fs_id = @review.fs_id
@@ -70,11 +75,21 @@ class ReviewsController < ApplicationController
 
     def book
         @review = Review.find(params[:id])
+        res_id = @review.res_id
+        usage = Usage.find_by_res_id(res_id)
+        book_count = usage.book_count
+        book_count = book_count + 1
+        usage.update(book_count: book_count)
         redirect_to @review.res_url
     end
 
     def yelp
         @review = Review.find(params[:id])
+        res_id = @review.res_id
+        usage = Usage.find_by_res_id(res_id)
+        yelp_count = usage.yelp_count
+        yelp_count = yelp_count + 1
+        usage.update(yelp_count: yelp_count)
         @yelp_id = @review.yelp_id
         @yelp_review = YelpReview.find_by_yelp_id(@yelp_id)
         redirect_to @yelp_review.url
@@ -83,6 +98,11 @@ class ReviewsController < ApplicationController
 
     def fs
         @review = Review.find(params[:id])
+        res_id = @review.res_id
+        usage = Usage.find_by_res_id(res_id)
+        fs_count = usage.fs_count
+        fs_count = fs_count + 1
+        usage.update(fs_count: fs_count)
         @fs_id = @review.fs_id
         @fs_review = FoursquareReview.find_by_fs_id(@fs_id)
         redirect_to @fs_review.url
@@ -91,6 +111,11 @@ class ReviewsController < ApplicationController
 
     def ta
         @review = Review.find(params[:id])
+        res_id = @review.res_id
+        usage = Usage.find_by_res_id(res_id)
+        ta_count = usage.ta_count
+        ta_count = ta_count + 1
+        usage.update(ta_count: ta_count)
         @ta_id = @review.ta_id
         @ta_review = TripadvisorReview.find_by_ta_id(@ta_id)
         redirect_to @ta_review.url
