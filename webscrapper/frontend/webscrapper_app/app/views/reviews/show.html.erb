@@ -16,7 +16,12 @@
   <%= @review.name %>
 </h2>
 
+<script type="text/javascript">
+analytics.page('View Restaurant');
+var link = document.getElementById('book-button');
 
+
+</script>
 <div class = "row">
   <div class = "col-md-4">
     <div class = "img-thumbnail">
@@ -27,16 +32,19 @@
     <br>
     <br>
     <p>
-      <strong><%=link_to  "Yelp Rating:" , @yelp_review.url%></strong>
+      <!-- <strong><%=link_to  "Yelp Rating:" , @yelp_review.url%></strong> -->
+      <strong><%=link_to  "Yelp Rating:" , {:controller => "reviews", :action => "yelp", :id=> @review.id }, method: :post%></strong>
       <%= @yelp_review.rating %> / <%= @yelp_review.scale %> (<%= @yelp_review.ratings_count %> ratings)<span class="stars"><%= @yelp_review.rating %></span>
     </p>
 
     <p>
-      <strong><%=link_to  "Trip Advisor Rating:", @ta_review.url %> </strong>
+      <!-- <strong><%=link_to  "Trip Advisor Rating:", @ta_review.url %> </strong> -->
+       <strong><%=link_to  "Trip Advisor Rating:" , {:controller => "reviews", :action => "ta", :id=> @review.id }, method: :post%></strong>
       <%= @ta_review.rating %> / <%= @ta_review.scale %> (<%= @ta_review.ratings_count %> ratings)<span class="stars"><%= @ta_review.rating %></span>
     </p>
     <p>
-      <strong><%=link_to "Foursquare Rating:", @fs_review.url %> </strong>
+     <!--  <strong><%=link_to "Foursquare Rating:", @fs_review.url %> </strong> -->
+       <strong><%=link_to  "Foursquare Rating:" , {:controller => "reviews", :action => "fs", :id=> @review.id }, method: :post%></strong>
       <%= @fs_review.rating %> / <%= @fs_review.scale %> (<%= @fs_review.ratings_count %> ratings)<span class="stars10"><%= @fs_review.rating %></span>
     </p>
     <p>
@@ -44,7 +52,8 @@
       <%= @aggregate %> / 5 <span class="stars"><%= @aggregate %></span>
     </p>
     <br>
-    <a class="btn btn-primary" href= "<%=@review.res_url%>" role="button">Book Now!</a>
+    <!-- <a class="btn btn-primary" id = "book-button" href= "<%=@review.res_url%>" role="button">Book Now!</a> -->
+    <%= button_to "Book Now!", {:controller => "reviews", :action => "book", :id=> @review.id }, {class: 'btn btn-primary'}%>
   </div>
   <div class = "img-thumbnail">
   <div id="map" style='width: 380px; height: 380px;' class = "col-md-4">

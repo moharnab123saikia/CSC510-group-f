@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
   root 'resto_scrapper#home'
   resources :reviews
+
+  post 'reviews/book' => 'reviews#book', as: :book_res
+  post 'reviews/yelp' => 'reviews#yelp', as: :yelp
+  post 'reviews/fs' => 'reviews#fs', as: :fs
+  post 'reviews/ta' => 'reviews#ta', as: :ta
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

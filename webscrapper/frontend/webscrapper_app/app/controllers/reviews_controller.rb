@@ -67,4 +67,33 @@ class ReviewsController < ApplicationController
     def set_review
 
     end
+
+    def book
+        @review = Review.find(params[:id])
+        redirect_to @review.res_url
+    end
+
+    def yelp
+        @review = Review.find(params[:id])
+        @yelp_id = @review.yelp_id
+        @yelp_review = YelpReview.find_by_yelp_id(@yelp_id)
+        redirect_to @yelp_review.url
+
+    end
+
+    def fs
+        @review = Review.find(params[:id])
+        @fs_id = @review.fs_id
+        @fs_review = FoursquareReview.find_by_fs_id(@fs_id)
+        redirect_to @fs_review.url
+
+    end
+
+    def ta
+        @review = Review.find(params[:id])
+        @ta_id = @review.ta_id
+        @ta_review = TripadvisorReview.find_by_ta_id(@ta_id)
+        redirect_to @ta_review.url
+        
+    end
 end
