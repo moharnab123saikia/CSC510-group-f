@@ -44,4 +44,4 @@ In order to evaluate the effectiveness of the three solutions, we will be perfor
       2. [Solution 2- Android based mobile app for aggregating restaurant reviews and ratings](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/resto_scrapper_app/RestoScrapper)
       3. [Solution 3 - Chrome plugin to show aggregated ratings from the top websites](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/resto-extension)
 5. April Presentation slides
-6. April Project Report(https://github.com/moharnab123saikia/CSC510-group-f/RestoScrapper_Apr1_Report.pdf)
+6. [April Project Report](https://github.com/moharnab123saikia/CSC510-group-f/RestoScrapper_Apr1_Report.pdf)
