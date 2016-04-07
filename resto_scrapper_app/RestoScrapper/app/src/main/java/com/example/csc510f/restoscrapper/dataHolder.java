@@ -11,6 +11,9 @@ import java.util.HashMap;
 public class dataHolder {
 
     private HashMap<String,String>name_res;
+    private HashMap<String,String>url_yelp;
+    private HashMap<String,String>url_tripA;
+    private HashMap<String,String>url_foursq;
     private HashMap<String,String>url_res;
     private HashMap<String,String>rating_foursq;
     private HashMap<String,String>rating_tripA;
@@ -45,6 +48,18 @@ public class dataHolder {
     {
         return url_res.get(key);
     }
+    public String getYelpURL(String key)
+    {
+        return url_yelp.get(key);
+    }
+    public String getTripAURL(String key)
+    {
+        return url_tripA.get(key);
+    }
+    public String getFourSqrURL(String key)
+    {
+        return url_foursq.get(key);
+    }
     public ArrayList<String> getReviews(String key)
     {
         return reviews.get(key);
@@ -61,6 +76,18 @@ public class dataHolder {
     public void setResUrl(HashMap<String,String>url_res)
     {
         this.url_res = url_res;
+    }
+    public void setYelpURL(HashMap<String,String>url_yelp)
+    {
+        this.url_yelp = url_yelp;
+    }
+    public void setTripAURL(HashMap<String,String>url_tripA)
+    {
+        this.url_tripA = url_tripA;
+    }
+    public void setFourSqrURL(HashMap<String,String>url_foursq)
+    {
+        this.url_foursq = url_foursq;
     }
     public void setFourSqRating(HashMap<String,String>rating_foursq)
     {

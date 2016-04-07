@@ -78,6 +78,46 @@ public class listItem extends Activity {
         TextView negreview_3 = (TextView) findViewById(R.id.negreview3);
         negreview_3.setText("#3: "+MainActivity.myDataHolder.getNegReviews(key).get(2));
 
+        Button btn1 = (Button)findViewById(R.id.yelptext);
+        final String yelpurl = MainActivity.myDataHolder.getYelpURL(key);
+        Log.i("listitem",yelpurl);
+        btn1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                Intent viewIntent1 =
+                        new Intent("android.intent.action.VIEW",
+                                Uri.parse(yelpurl));
+                startActivity(viewIntent1);
+            }
+        });
+
+        Button btn2 = (Button)findViewById(R.id.tripAdvisortext);
+        final String tripurl = MainActivity.myDataHolder.getTripAURL(key);
+        Log.i("listitem",tripurl);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                Intent viewIntent2 =
+                        new Intent("android.intent.action.VIEW",
+                                Uri.parse(tripurl));
+                startActivity(viewIntent2);
+            }
+        });
+
+        Button btn3 = (Button)findViewById(R.id.fourSquaretext);
+        final String foursurl = MainActivity.myDataHolder.getFourSqrURL(key);
+        Log.i("listitem",foursurl);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                Intent viewIntent3 =
+                        new Intent("android.intent.action.VIEW",
+                                Uri.parse(foursurl));
+                startActivity(viewIntent3);
+            }
+        });
+
+
         final String url = MainActivity.myDataHolder.getResUrl(key);
 
         Button button = (Button)findViewById(R.id.btn);

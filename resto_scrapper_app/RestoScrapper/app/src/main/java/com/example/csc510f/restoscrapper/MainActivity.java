@@ -40,6 +40,10 @@ public class MainActivity extends Activity implements fetch_comp {
     public HashMap<String,String>rating_tripA = new HashMap<String,String>();
     public HashMap<String,String>rating_yelp = new HashMap<String,String>();
     public HashMap<String,String>rating_aggr = new HashMap<String,String>();
+
+    public HashMap<String,String>url_yelp = new HashMap<String,String>();
+    public HashMap<String,String>url_tripA = new HashMap<String,String>();
+    public HashMap<String,String>url_foursq = new HashMap<String,String>();
     //public HashMap<String,String>res_url;
     public HashMap<String,ArrayList<String>>reviews = new HashMap<String,ArrayList<String>>();
     public HashMap<String,ArrayList<String>>negreviews = new HashMap<String,ArrayList<String>>();
@@ -158,6 +162,11 @@ public class MainActivity extends Activity implements fetch_comp {
                     // Storing the data for future use
 
                     name_res.put(key,res_name);
+                    url_foursq.put(key,foursqr_url);
+                    url_tripA.put(key, tripadvisor_url);
+                    url_yelp.put(key, yelp_data_url);
+
+
                     rating_foursq.put(key,foursqr_rating);
                     rating_tripA.put(key,tripadvisor_rating);
                     rating_yelp.put(key, yelp_data_rating);
@@ -200,6 +209,9 @@ public class MainActivity extends Activity implements fetch_comp {
                     myDataHolder.setReviews(reviews);
                     myDataHolder.setNegReviews(negreviews);
                     myDataHolder.setResUrl(url_res);
+                    myDataHolder.setYelpURL(url_yelp);
+                    myDataHolder.setTripAURL(url_tripA);
+                    myDataHolder.setFourSqrURL(url_foursq);
                     // Storing end
                     Restaurants add=new Restaurants();
                     add.name = res_name;
