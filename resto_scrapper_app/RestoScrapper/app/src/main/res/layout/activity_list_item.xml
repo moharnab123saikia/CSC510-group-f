@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <TextView
+            <Button
                 android:id="@+id/yelptext"
                 android:text="@string/yelp"
                 android:layout_width="wrap_content"
@@ -90,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <TextView
+            <Button
                 android:id="@+id/tripAdvisortext"
                 android:text="@string/tripA"
                 android:layout_width="wrap_content"
@@ -111,7 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-            <TextView
+            <Button
                 android:id="@+id/fourSquaretext"
                 android:text="@string/fourS"
                 android:layout_width="wrap_content"
