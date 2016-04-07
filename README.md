@@ -1,4 +1,17 @@
 #Restoscrapper
+#April-1
+1. [Repo's issue page ](https://goo.gl/MnPL3L)
+2. [Repo's milestone page] (https://goo.gl/8vuiNq)
+3. [Repo's contributor page] (https://goo.gl/RcSi0m)
+4. Code directory: 
+   1. [common base](https://github.com/moharnab123saikia/CSC510-group-f)
+   2. Code for three different solutions
+      1. [Solution 1- Web Scraping application tool for aggregating the rating and reviews. ](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/webscrapper)
+      2. [Solution 2- Android based mobile app for aggregating restaurant reviews and ratings](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/resto_scrapper_app/RestoScrapper)
+      3. [Solution 3 - Chrome plugin to show aggregated ratings from the top websites](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/resto-extension)
+5. [April Presentation slides](https://github.com/moharnab123saikia/CSC510-group-f/blob/master/RestoScrapper_Presentation.pdf)
+6. [April Project Report](https://github.com/moharnab123saikia/CSC510-group-f/blob/master/RestoScrapper_Apr1_Report.pdf)
+
 #March-1
 1. [Repo's issue page ](https://goo.gl/MnPL3L)
 2. [Repo's milestone page] (https://goo.gl/8vuiNq)
@@ -33,15 +46,4 @@ In order to evaluate the effectiveness of the three solutions, we will be perfor
          1. Todo Issue 1: Telemetry data analysis to decide the best of three implemented tools
          2. Todo Issue 2: Coming up with ideas for feature enhancement to improve user experience.
    
-#April-1
-1. [Repo's issue page ](https://goo.gl/MnPL3L)
-2. [Repo's milestone page] (https://goo.gl/8vuiNq)
-3. [Repo's contributor page] (https://goo.gl/RcSi0m)
-4. Code directory: 
-   1. [common base](https://github.com/moharnab123saikia/CSC510-group-f)
-   2. Code for three different solutions
-      1. [Solution 1- Web Scraping application tool for aggregating the rating and reviews. ](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/webscrapper)
-      2. [Solution 2- Android based mobile app for aggregating restaurant reviews and ratings](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/resto_scrapper_app/RestoScrapper)
-      3. [Solution 3 - Chrome plugin to show aggregated ratings from the top websites](https://github.com/moharnab123saikia/CSC510-group-f/tree/master/resto-extension)
-5. [April Presentation slides](https://github.com/moharnab123saikia/CSC510-group-f/blob/master/RestoScrapper_Presentation.pdf)
-6. [April Project Report](https://github.com/moharnab123saikia/CSC510-group-f/blob/master/RestoScrapper_Apr1_Report.pdf)
+
