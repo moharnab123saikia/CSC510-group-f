@@ -1,4 +1,36 @@
 <h1>Website usage history</h1>
-<%= @total_show_count %>
-<%= @total_redirect_count %>
-<%= @redirect_count_percentage %>
+
+</br>
+
+<table border="4" >
+	<col width="220">
+	<col width="100">
+	<col width="100">
+	<col width="100">
+	<col width="100">
+	<col width="100">
+	<tr>
+		<th>Restaurant Name</th>
+		<th>Hit Count</th>
+		<th>Yelp Redirect Count</th>
+		<th>Trip Advisor Redirect Count</th>
+		<th>Foursquare Redirect Count</th>
+		<th>Booking Count</th>
+	</tr>
+    <% for i in 0..@total_count %>
+        <tr>
+    	    <td><%= @res_names[i] %></td>
+    	    <td><%= @show_counts[i] %></td>
+    	    <td><%= @yelp_counts[i] %></td>
+    	    <td><%= @ta_counts[i] %></td>
+    	    <td><%= @fs_counts[i] %></td>
+    	    <td><%= @booking_counts[i] %></td>
+        </tr>
+    <% end %>
+</table>
+<br/>
+<font color = "green"><b><%= "Total hit count: " + @total_show_count.to_s %></b></font><br/>
+<font color = "green"><b><%= "Total redirect count: " + @total_redirect_count.to_s %></b></font><br/>
+<font color = "green"><b><%= "Total booking count: " + @total_booking_count.to_s %></b></font><br/>
+<font color = "green"><b><%= "Total redirect percentage: " + @redirect_count_percentage.to_s %></b></font><br/>
+<font color = "green"><b><%= "Total booking percentage: " + @booking_count_percentage.to_s %></b></font><br/>

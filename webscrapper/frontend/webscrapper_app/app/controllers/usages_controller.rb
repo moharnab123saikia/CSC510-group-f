@@ -1,5 +1,6 @@
 class UsagesController < ApplicationController
 	def index
+		@res_names = []
 		@res_ids = []
 		@show_counts = []
 		@yelp_counts = []
@@ -15,8 +16,11 @@ class UsagesController < ApplicationController
 			@fs_counts[count] = usage.fs_count
 			@ta_counts[count] = usage.ta_count
 			@booking_counts[count] = usage.book_count
+			@res_names[count] = Review.find_by_res_id(usage.res_id).name
 			count = count + 1
 		end
+
+		@total_count = count-1
 
 		@total_show_count = 0
 		@total_redirect_count = 0
