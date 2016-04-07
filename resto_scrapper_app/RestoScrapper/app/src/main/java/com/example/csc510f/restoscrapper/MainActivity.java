@@ -1,5 +1,10 @@
 package com.example.csc510f.restoscrapper;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -11,6 +16,7 @@ import org.json.JSONObject;
 import com.example.csc510f.restoscrapper.FetchData.fetch_comp;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -20,6 +26,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity implements fetch_comp {
@@ -37,11 +44,18 @@ public class MainActivity extends Activity implements fetch_comp {
     public HashMap<String,ArrayList<String>>reviews = new HashMap<String,ArrayList<String>>();
     public HashMap<String,ArrayList<String>>negreviews = new HashMap<String,ArrayList<String>>();
     public static dataHolder myDataHolder = new dataHolder();
+    static long startTime;
+    static long endTime;
+    String file = "myfile.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+         startTime = System.nanoTime();
+
+        Log.i("startTime", startTime / 1000000+ " ");
 
         list = (ListView) findViewById(R.id.list);
         adapter = new ListAdapter(this);
@@ -69,6 +83,52 @@ public class MainActivity extends Activity implements fetch_comp {
 
     }
 
+
+    public void onDestroy() {
+        endTime = System.nanoTime();
+        Log.i("endtime", endTime / 1000000+ " ");
+        long elapsedtime = endTime - startTime;
+        Log.i("elapsedtime", elapsedtime / 1000000+ " ");
+//        BufferedWriter outStream= null;
+//        try {
+//            outStream = new BufferedWriter(new FileWriter("output.txt"));
+//            Log.i("test", "file created");
+//        } catch (IOException e) {
+//            Log.i("test", "exception");
+//            e.printStackTrace();
+//        }
+//        try {
+//            outStream.newLine();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        try {
+//            outStream.write(elapsedtime / 1000000 +" ");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        try {
+//            outStream.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+        try {
+            FileOutputStream fileout=openFileOutput(file, MODE_APPEND);
+            OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
+            outputWriter.write(listItem.clickcount + " ");
+            outputWriter.close();
+
+            //disp0lay file saved message
+            Log.i("test_toast", "file created");
+            Toast.makeText(getBaseContext(), "File saved successfully!",
+                    Toast.LENGTH_SHORT).show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        super.onDestroy();
+    }
 
 
     public void get_data(String data)

@@ -1,6 +1,7 @@
 package com.example.csc510f.restoscrapper;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
@@ -12,11 +13,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.HashMap;
 
 
+
 public class listItem extends Activity {
+    static int clickcount =0;
+    String file = "myClickFile.txt";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,12 +83,30 @@ public class listItem extends Activity {
         Button button = (Button)findViewById(R.id.btn);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
+
                 Intent viewIntent =
                         new Intent("android.intent.action.VIEW",
                                 Uri.parse(url));
+                clickcount=clickcount+1;
+                Log.i("clickcount Inside", clickcount+"");
+                try {
+                    FileOutputStream fileout=openFileOutput(file, MODE_APPEND);
+                    OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
+                    outputWriter.write(clickcount + "");
+                    outputWriter.close();
+
+                    //disp0lay file saved message
+                    Log.i("test_toast", "file created");
+                    Toast.makeText(getBaseContext(), "File saved successfully!",
+                            Toast.LENGTH_SHORT).show();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 startActivity(viewIntent);
             }
         });
+        Log.i("clickcount Outside", clickcount+"");
 
     }
 
