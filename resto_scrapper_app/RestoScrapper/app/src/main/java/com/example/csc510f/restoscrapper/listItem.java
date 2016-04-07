@@ -106,7 +106,7 @@ public class listItem extends Activity {
                 startActivity(viewIntent);
             }
         });
-        Log.i("clickcount Outside", clickcount+"");
+       // Log.i("clickcount Outside", clickcount+"");
 
     }
 

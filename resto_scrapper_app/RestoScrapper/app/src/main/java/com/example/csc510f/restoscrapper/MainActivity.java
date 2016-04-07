@@ -53,9 +53,9 @@ public class MainActivity extends Activity implements fetch_comp {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-         startTime = System.nanoTime();
+//         startTime = System.nanoTime();
 
-        Log.i("startTime", startTime / 1000000+ " ");
+//        Log.i("startTime", startTime / 1000000+ " ");
 
         list = (ListView) findViewById(R.id.list);
         adapter = new ListAdapter(this);
@@ -85,33 +85,10 @@ public class MainActivity extends Activity implements fetch_comp {
 
 
     public void onDestroy() {
-        endTime = System.nanoTime();
-        Log.i("endtime", endTime / 1000000+ " ");
-        long elapsedtime = endTime - startTime;
-        Log.i("elapsedtime", elapsedtime / 1000000+ " ");
-//        BufferedWriter outStream= null;
-//        try {
-//            outStream = new BufferedWriter(new FileWriter("output.txt"));
-//            Log.i("test", "file created");
-//        } catch (IOException e) {
-//            Log.i("test", "exception");
-//            e.printStackTrace();
-//        }
-//        try {
-//            outStream.newLine();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        try {
-//            outStream.write(elapsedtime / 1000000 +" ");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        try {
-//            outStream.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+//        endTime = System.nanoTime();
+//        Log.i("endtime", endTime / 1000000+ " ");
+//        long elapsedtime = endTime - startTime;
+//        Log.i("elapsedtime", elapsedtime / 1000000+ " ");
 
         try {
             FileOutputStream fileout=openFileOutput(file, MODE_APPEND);
