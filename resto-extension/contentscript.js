@@ -64,15 +64,16 @@ function loadJSON(callback) {
 	 }
 
      //displaying the info on the extension
+     alert(ta_url + "data");
 	 if (yelp_link_found == 1) {
-	 	var display_text = '<div  id="topbar"><h3><a href ='+ ta_url+ ' title="View details in TripAdvisor" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘Trip Advisor Link’]);”>TripAdvisor</a> Rating: ' + ta_rating +"/5 ("+ta_count+" reviews)"+'\t|    \t<a href ='+ fs_url+' title="View details in FourSquare" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘FourSquare Link’]);”>FourSquare</a> Rating: '+ fs_rating +"/10 ("+fs_count+" reviews)"+'\t|    \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
+	 	var display_text = '<div  id="topbar"><h3><a href ='+ ta_url+ ' title="View details in TripAdvisor" id = "ta_url" >TripAdvisor</a> Rating: ' + ta_rating +"/5 ("+ta_count+" reviews)"+'\t|    \t<a href ='+ fs_url+' title="View details in FourSquare" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘FourSquare Link’]);”>FourSquare</a> Rating: '+ fs_rating +"/10 ("+fs_count+" reviews)"+'\t|    \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
 	 }
 	 else if (ta_link_found == 1) {
-	 	var display_text = '<div  id="topbar"><h3><h3><a href ='+ yelp_url+' title="View details in Yelp" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘Yelp Link’]);”>Yelp</a> Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \t<a href ='+ fs_url+' title="View details in FourSquare" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘FourSquare Link’]);”>FourSquare</a> Rating: '+ fs_rating +"/10 ("+fs_count+" reviews)"+'\t|    \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
+	 	var display_text = '<div  id="topbar"><h3><h3><a id = "yelp_url" href ='+ yelp_url+' title="View details in Yelp" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘Yelp Link’]);”>Yelp</a> Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \t<a href ='+ fs_url+' title="View details in FourSquare" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘FourSquare Link’]);”>FourSquare</a> Rating: '+ fs_rating +"/10 ("+fs_count+" reviews)"+'\t|    \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
 	 }
 	 else if (fs_link_found == 1) {
         $('#desktopHeader').css('position','relative');
-	 	var display_text = '<div  id="topbar"><h3><h3><a href ='+ yelp_url+' title="View details in Yelp" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘Yelp Link’]);”> >Yelp</a> Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \t<a href ='+ ta_url+' title="View details in TripAdvisor" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘Trip Advisor Link’]);”>TripAdvisor</a> Rating: '+ ta_rating +"/5 ("+ta_count+" reviews)"+'\t|     \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
+	 	var display_text = '<div  id="topbar"><h3><h3><a id = "yelp_url" href ='+ yelp_url+' title="View details in Yelp" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘Yelp Link’]);”> >Yelp</a> Rating: ' + yelp_rating +"/5 ("+yelp_count+" reviews)"+'\t|    \t<a href ='+ ta_url+' title="View details in TripAdvisor" onClick=”_gaq.push([‘_trackEvent’, ‘External Link’, ‘Restaurant Website Links’, ‘Trip Advisor Link’]);”>TripAdvisor</a> Rating: '+ ta_rating +"/5 ("+ta_count+" reviews)"+'\t|     \tAggregate Rating: '+aggregate_rating_precise+'/5</h3></div >';
 	 }
 
      display_text += '<form method="LINK" ACTION="'+res_url+'"><INPUT TYPE="submit" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" VALUE="Book Now"></form>';
@@ -81,5 +82,16 @@ function loadJSON(callback) {
 
  });
 }
-
 init();
+var link1 = document.getElementById('ta_url');
+if(link1==null)
+    alert("no link");
+
+link1.onclick = getClicks;
+function getClicks(){
+    alert("link clicked"); 
+}
+
+
+
+
