@@ -1,0 +1,470 @@
+1_group5,1455063442,milestoned,"Web Scraping Application",user_13,545143060
+2_group5,1455065711,labeled,enhancement,user_39,545169799
+2_group5,1455065711,assigned,user_39,user_39,545169800
+2_group5,1455065711,milestoned,"Solution 2: Plugin Development",user_39,545169802
+3_group5,1455068365,labeled,enhancement,user_13,545202149
+3_group5,1455068369,milestoned,"Solution 1: Web Scraping Application",user_13,545202204
+3_group5,1455068376,assigned,user_13,user_13,545202249
+1_group5,1455068397,labeled,enhancement,user_13,545202505
+4_group5,1455764462,labeled,enhancement,user_13,554528514
+4_group5,1455764462,milestoned,"Solution 1: Web Scraping Application",user_13,554528515
+5_group5,1455764494,labeled,enhancement,user_13,554528942
+5_group5,1455764494,milestoned,"Solution 1: Web Scraping Application",user_13,554528946
+6_group5,1455764515,labeled,enhancement,user_13,554529229
+6_group5,1455764515,milestoned,"Solution 1: Web Scraping Application",user_13,554529233
+7_group5,1455764536,labeled,enhancement,user_13,554529503
+7_group5,1455764536,milestoned,"Solution 1: Web Scraping Application",user_13,554529504
+8_group5,1455773922,milestoned,"Solution 1: Web Scraping Application",user_57,554617120
+9_group5,1455773972,milestoned,"Solution 1: Web Scraping Application",user_57,554617523
+10_group5,1455774138,milestoned,"Solution 2: Plugin Development",user_57,554618982
+11_group5,1455774191,milestoned,"Solution 3: Android application for reviews",user_57,554619536
+8_group5,1455774807,labeled,enhancement,user_57,554627819
+9_group5,1455774816,labeled,enhancement,user_57,554627902
+10_group5,1455774822,labeled,enhancement,user_57,554627974
+11_group5,1455774829,labeled,enhancement,user_57,554628048
+12_group5,1455775184,labeled,enhancement,user_57,554631311
+12_group5,1455775184,milestoned,"Solution 1: Web Scraping Application",user_57,554631312
+13_group5,1455822086,labeled,enhancement,user_18,555535053
+13_group5,1455822086,milestoned,"Solution 1: Web Scraping Application",user_18,555535054
+14_group5,1455822188,labeled,Android,user_18,555537169
+14_group5,1455822188,milestoned,"Solution 3: Android application for reviews",user_18,555537170
+15_group5,1455822317,labeled,Android,user_18,555540165
+15_group5,1455822317,milestoned,"Solution 3: Android application for reviews",user_18,555540166
+16_group5,1455822377,labeled,enhancement,user_18,555541684
+16_group5,1455822377,milestoned,"Solution 1: Web Scraping Application",user_18,555541685
+17_group5,1455822491,labeled,enhancement,user_13,555544002
+17_group5,1455822491,assigned,user_13,user_13,555544003
+17_group5,1455822491,milestoned,"Solution 1: Web Scraping Application",user_13,555544004
+6_group5,1455824450,assigned,user_13,user_13,555592484
+1_group5,1455824580,renamed,renamed,user_13,555594969
+1_group5,1455824583,assigned,user_13,user_13,555595042
+17_group5,1455824738,labeled,"Web App",user_13,555597922
+17_group5,1455824747,unlabeled,enhancement,user_13,555598079
+7_group5,1455824778,labeled,"Web App",user_13,555598831
+7_group5,1455824778,unlabeled,enhancement,user_13,555598832
+1_group5,1455824800,labeled,"Web App",user_13,555599257
+1_group5,1455824800,unlabeled,enhancement,user_13,555599258
+3_group5,1455824823,labeled,"Web App",user_13,555599693
+3_group5,1455824823,unlabeled,enhancement,user_13,555599694
+6_group5,1455824846,labeled,"Web App",user_13,555600112
+6_group5,1455824846,unlabeled,enhancement,user_13,555600113
+5_group5,1455824863,labeled,"Web App",user_13,555600392
+5_group5,1455824863,unlabeled,enhancement,user_13,555600393
+4_group5,1455824879,labeled,"Web App",user_13,555600743
+4_group5,1455824879,unlabeled,enhancement,user_13,555600744
+18_group5,1455825158,assigned,user_39,user_39,555606261
+18_group5,1455825158,milestoned,"Solution 2: Plugin Development",user_39,555606263
+19_group5,1455825201,assigned,user_39,user_39,555607068
+19_group5,1455825201,milestoned,"Solution 2: Plugin Development",user_39,555607069
+20_group5,1455825520,assigned,user_39,user_39,555613598
+20_group5,1455825520,milestoned,"Solution 1: Web Scraping Application",user_39,555613599
+8_group5,1455826388,assigned,user_13,user_13,555630747
+8_group5,1455826391,unassigned,unassigned,user_13,555630783
+8_group5,1455826391,assigned,user_39,user_39,555630784
+8_group5,1455826394,unassigned,unassigned,user_39,555630863
+8_group5,1455826394,assigned,user_13,user_13,555630864
+8_group5,1455826397,unassigned,unassigned,user_13,555630941
+8_group5,1455826479,closed,closed,user_13,555632494
+17_group5,1455826674,unassigned,unassigned,user_13,555635850
+17_group5,1455826674,assigned,user_39,user_39,555635851
+4_group5,1455826675,closed,closed,user_13,555635878
+17_group5,1455826681,unassigned,unassigned,user_39,555635976
+17_group5,1455826681,assigned,user_13,user_13,555635977
+4_group5,1455826685,assigned,user_13,user_13,555636033
+21_group5,1455828230,assigned,user_39,user_39,555671814
+21_group5,1455828230,milestoned,"Solution 2: Plugin Development",user_13,555671815
+21_group5,1455828276,labeled,Plugin,user_13,555672611
+22_group5,1455828302,labeled,Android,user_13,555672998
+22_group5,1455828302,milestoned,"Solution 3: Android application for reviews",user_13,555672999
+23_group5,1455828318,labeled,Android,user_13,555673257
+23_group5,1455828318,milestoned,"Solution 3: Android application for reviews",user_13,555673258
+12_group5,1455828318,assigned,user_57,user_57,555673269
+9_group5,1455828379,labeled,"Web App",user_13,555674359
+9_group5,1455828379,unlabeled,enhancement,user_13,555674360
+16_group5,1455828404,labeled,"Web App",user_13,555674772
+16_group5,1455828404,unlabeled,enhancement,user_13,555674773
+13_group5,1455828413,labeled,"Web App",user_13,555674908
+13_group5,1455828413,unlabeled,enhancement,user_13,555674909
+12_group5,1455828423,closed,closed,user_57,555675093
+12_group5,1455828425,labeled,"Web App",user_13,555675139
+12_group5,1455828425,unlabeled,enhancement,user_13,555675140
+10_group5,1455828450,labeled,Plugin,user_13,555675574
+10_group5,1455828450,unlabeled,enhancement,user_13,555675575
+11_group5,1455828460,labeled,Android,user_13,555675743
+11_group5,1455828460,unlabeled,enhancement,user_13,555675744
+2_group5,1455828472,labeled,Plugin,user_13,555675928
+2_group5,1455828472,unlabeled,enhancement,user_13,555675929
+18_group5,1455828505,labeled,Plugin,user_13,555676596
+19_group5,1455828512,labeled,Plugin,user_13,555676747
+20_group5,1455828581,labeled,"Web App",user_13,555678302
+5_group5,1455828708,assigned,user_13,user_13,555680503
+24_group5,1455828722,labeled,enhancement,user_18,555680739
+24_group5,1455828722,milestoned,"Solution 1: Web Scraping Application",user_18,555680740
+25_group5,1455828824,labeled,enhancement,user_18,555682787
+25_group5,1455828824,milestoned,"Solution 1: Web Scraping Application",user_18,555682788
+26_group5,1455828882,labeled,Plugin,user_18,555684230
+26_group5,1455828882,milestoned,"Solution 2: Plugin Development",user_18,555684232
+27_group5,1455828939,labeled,Android,user_18,555685576
+27_group5,1455828939,milestoned,"Solution 3: Android application for reviews",user_18,555685578
+3_group5,1455828952,unassigned,unassigned,user_13,555685827
+3_group5,1455828952,assigned,user_57,user_57,555685828
+27_group5,1455828962,assigned,user_18,user_18,555686048
+20_group5,1455828964,unassigned,unassigned,user_39,555686064
+20_group5,1455828964,assigned,user_13,user_13,555686066
+26_group5,1455829016,assigned,user_39,user_39,555687165
+15_group5,1455829047,assigned,user_18,user_18,555687794
+16_group5,1455829055,assigned,user_13,user_13,555687959
+13_group5,1455829067,assigned,user_57,user_57,555688202
+9_group5,1455829086,assigned,user_57,user_57,555688574
+7_group5,1455829139,assigned,user_57,user_57,555689807
+28_group5,1455891685,labeled,"Web App",user_13,556607189
+28_group5,1455891685,assigned,user_13,user_13,556607190
+28_group5,1455891685,milestoned,"Solution 1: Web Scraping Application",user_13,556607191
+20_group5,1455898329,closed,closed,user_13,556748529
+17_group5,1455898361,closed,closed,user_13,556749596
+29_group5,1455904135,labeled,"help wanted",user_13,556877517
+29_group5,1455904135,milestoned,"Solution 1: Web Scraping Application",user_13,556877522
+2_group5,1455907375,closed,closed,user_39,556946978
+22_group5,1455907701,assigned,user_18,user_18,556952528
+23_group5,1455907960,assigned,user_18,user_18,556957842
+14_group5,1455907978,assigned,user_18,user_18,556958113
+11_group5,1455907997,assigned,user_18,user_18,556958486
+30_group5,1455926219,labeled,"Web App",user_57,557273278
+30_group5,1455926219,milestoned,"Solution 1: Web Scraping Application",user_57,557273279
+31_group5,1455926247,labeled,"Web App",user_57,557273567
+31_group5,1455926247,milestoned,"Solution 1: Web Scraping Application",user_57,557273569
+32_group5,1455959071,labeled,Android,user_57,557461132
+32_group5,1455959071,milestoned,"Solution 3: Android application for reviews",user_57,557461133
+33_group5,1455959095,labeled,Android,user_57,557461207
+33_group5,1455959095,milestoned,"Solution 3: Android application for reviews",user_57,557461208
+33_group5,1455989544,assigned,user_18,user_18,557729651
+34_group5,1456091026,labeled,Android,user_57,558676899
+34_group5,1456091026,labeled,"Web App",user_57,558676900
+34_group5,1456091026,labeled,Plugin,user_57,558676901
+34_group5,1456091026,assigned,user_57,user_57,558676902
+34_group5,1456091026,milestoned,"Solution 1: Web Scraping Application",user_57,558676903
+34_group5,1456091227,closed,closed,user_57,558679086
+6_group5,1456091898,closed,closed,user_13,558685945
+18_group5,1456092324,closed,closed,user_39,558689826
+19_group5,1456093999,closed,closed,user_39,558707798
+26_group5,1456093999,referenced,referenced,user_39,558707799
+35_group5,1456124944,labeled,"Web App",user_57,559114494
+35_group5,1456124944,assigned,user_57,user_57,559114495
+35_group5,1456124944,milestoned,"Solution 1: Web Scraping Application",user_57,559114496
+35_group5,1456125075,closed,closed,user_57,559116767
+26_group5,1456132201,closed,closed,user_57,559249011
+27_group5,1456132771,closed,closed,user_18,559262184
+22_group5,1456133095,closed,closed,user_18,559270283
+36_group5,1456133382,labeled,Android,user_18,559277652
+36_group5,1456133382,milestoned,"Solution 3: Android application for reviews",user_18,559277653
+28_group5,1456155566,closed,closed,user_13,559836086
+5_group5,1456155585,closed,closed,user_13,559836766
+16_group5,1456155603,closed,closed,user_13,559837755
+19_group5,1456156008,referenced,referenced,user_13,559848757
+1_group5,1456165383,closed,closed,user_13,560116067
+37_group5,1456165412,labeled,"Web App",user_13,560117056
+37_group5,1456165412,assigned,user_13,user_13,560117057
+37_group5,1456165412,milestoned,"Solution 1: Web Scraping Application",user_13,560117059
+38_group5,1456165440,labeled,"Web App",user_13,560117855
+38_group5,1456165440,assigned,user_13,user_13,560117856
+38_group5,1456165440,milestoned,"Solution 1: Web Scraping Application",user_13,560117857
+39_group5,1456165469,labeled,"Web App",user_13,560118611
+39_group5,1456165469,assigned,user_13,user_13,560118612
+39_group5,1456165469,milestoned,"Solution 1: Web Scraping Application",user_13,560118613
+39_group5,1456410134,closed,closed,user_13,565660446
+37_group5,1456410145,closed,closed,user_13,565660866
+38_group5,1456410181,closed,closed,user_13,565662292
+40_group5,1456411025,labeled,bug,user_13,565688408
+40_group5,1456411025,assigned,user_13,user_13,565688410
+40_group5,1456411025,milestoned,"Solution 1: Web Scraping Application",user_13,565688412
+40_group5,1456411047,labeled,"Web App",user_13,565689037
+41_group5,1456413674,labeled,question,user_13,565769845
+41_group5,1456413674,labeled,"Web App",user_13,565769846
+41_group5,1456413674,milestoned,"Solution 1: Web Scraping Application",user_13,565769847
+40_group5,1456416619,closed,closed,user_13,565856254
+42_group5,1456520313,labeled,"Web App",user_13,568196327
+42_group5,1456520313,assigned,user_13,user_13,568196328
+42_group5,1456520313,milestoned,"Solution 1: Web Scraping Application",user_13,568196329
+41_group5,1456620101,assigned,user_13,user_13,569364487
+43_group5,1456620134,labeled,"Web App",user_13,569364844
+43_group5,1456620134,assigned,user_13,user_13,569364845
+43_group5,1456620135,milestoned,"Solution 1: Web Scraping Application",user_13,569364846
+9_group5,1456621137,unassigned,unassigned,user_57,569372516
+9_group5,1456621137,assigned,user_39,user_39,569372517
+9_group5,1456621168,closed,closed,user_39,569372690
+43_group5,1456631818,closed,closed,user_13,569474505
+41_group5,1456631840,closed,closed,user_13,569474916
+42_group5,1456631853,closed,closed,user_13,569475204
+36_group5,1456634163,closed,closed,user_18,569496575
+33_group5,1456634210,closed,closed,user_18,569496960
+44_group5,1456634368,labeled,enhancement,user_18,569498110
+44_group5,1456634368,labeled,question,user_18,569498111
+44_group5,1456634368,labeled,Android,user_18,569498112
+44_group5,1456634368,milestoned,"Solution 3: Android application for reviews",user_18,569498113
+32_group5,1456634420,closed,closed,user_18,569498610
+44_group5,1456634530,labeled,"help wanted",user_18,569499543
+23_group5,1456634581,labeled,duplicate,user_18,569499858
+14_group5,1456634722,closed,closed,user_18,569501218
+45_group5,1456640659,labeled,"Web App",user_57,569551456
+45_group5,1456640659,assigned,user_57,user_57,569551457
+45_group5,1456640659,milestoned,"Solution 1: Web Scraping Application",user_57,569551458
+45_group5,1456640713,renamed,renamed,user_57,569551921
+45_group5,1456643213,closed,closed,user_57,569581526
+46_group5,1456646451,labeled,"Web App",user_57,569615212
+46_group5,1456646451,assigned,user_57,user_57,569615213
+46_group5,1456646451,milestoned,"Solution 1: Web Scraping Application",user_57,569615214
+46_group5,1456646486,closed,closed,user_57,569615570
+47_group5,1456646571,labeled,"Web App",user_57,569616337
+47_group5,1456646571,assigned,user_57,user_57,569616338
+47_group5,1456646571,milestoned,"Solution 1: Web Scraping Application",user_57,569616339
+48_group5,1456646655,labeled,"Web App",user_39,569617137
+48_group5,1456646655,assigned,user_39,user_39,569617138
+48_group5,1456646655,milestoned,"Solution 1: Web Scraping Application",user_39,569617140
+47_group5,1456646729,closed,closed,user_57,569617811
+29_group5,1456647977,closed,closed,user_57,569627791
+31_group5,1456648000,assigned,user_39,user_39,569628020
+13_group5,1456648047,closed,closed,user_57,569628355
+48_group5,1456651753,closed,closed,user_39,569669602
+31_group5,1456651778,closed,closed,user_39,569669828
+3_group5,1456651894,closed,closed,user_39,569670583
+49_group5,1456666865,labeled,enhancement,user_13,569810248
+49_group5,1456666865,labeled,"Web App",user_13,569810249
+49_group5,1456666865,assigned,user_13,user_13,569810250
+49_group5,1456666865,milestoned,"Solution 1: Web Scraping Application",user_13,569810251
+50_group5,1456666946,labeled,enhancement,user_13,569810866
+50_group5,1456666946,labeled,"Web App",user_13,569810867
+50_group5,1456666946,assigned,user_13,user_13,569810868
+50_group5,1456666946,milestoned,"Solution 1: Web Scraping Application",user_13,569810869
+49_group5,1456668385,closed,closed,user_13,569824629
+51_group5,1456706887,labeled,bug,user_57,570235910
+51_group5,1456706887,labeled,"Web App",user_57,570235911
+51_group5,1456706887,assigned,user_39,user_39,570235912
+51_group5,1456706887,milestoned,"Solution 1: Web Scraping Application",user_57,570235913
+52_group5,1456706956,labeled,bug,user_57,570236717
+52_group5,1456706956,labeled,"Web App",user_57,570236718
+52_group5,1456706956,assigned,user_57,user_57,570236719
+52_group5,1456706956,milestoned,"Solution 1: Web Scraping Application",user_57,570236720
+53_group5,1456706991,labeled,enhancement,user_57,570237033
+53_group5,1456706991,labeled,"Web App",user_57,570237034
+53_group5,1456706991,assigned,user_57,user_57,570237035
+53_group5,1456706991,milestoned,"Solution 1: Web Scraping Application",user_57,570237036
+53_group5,1456709284,closed,closed,user_57,570266836
+52_group5,1456710260,closed,closed,user_57,570282038
+54_group5,1456733108,labeled,enhancement,user_57,570624702
+54_group5,1456733108,labeled,"Web App",user_57,570624703
+54_group5,1456733108,assigned,user_57,user_57,570624705
+54_group5,1456733108,milestoned,"Solution 1: Web Scraping Application",user_57,570624706
+54_group5,1456733128,closed,closed,user_57,570624980
+7_group5,1456733311,unassigned,unassigned,user_57,570628251
+7_group5,1456733311,assigned,user_39,user_39,570628252
+10_group5,1456733395,assigned,user_39,user_39,570630028
+30_group5,1456733519,assigned,user_57,user_57,570632947
+30_group5,1456733522,closed,closed,user_57,570633020
+11_group5,1456734855,closed,closed,user_18,570668734
+44_group5,1456735013,closed,closed,user_18,570671430
+23_group5,1456735058,closed,closed,user_18,570672144
+51_group5,1456735230,closed,closed,user_39,570675586
+55_group5,1456742136,milestoned,"Solution 2: Plugin Development",user_39,570841751
+55_group5,1456742139,assigned,user_39,user_39,570841803
+55_group5,1456742164,labeled,bug,user_39,570842490
+55_group5,1456742164,labeled,"Web App",user_39,570842491
+55_group5,1456742183,labeled,Plugin,user_39,570843028
+55_group5,1456742183,unlabeled,"Web App",user_39,570843029
+50_group5,1456742301,closed,closed,user_57,570845885
+24_group5,1456742478,assigned,user_57,user_57,570849392
+24_group5,1456742491,closed,closed,user_57,570849673
+56_group5,1456788756,labeled,enhancement,user_57,572088520
+56_group5,1456788756,labeled,Android,user_57,572088521
+56_group5,1456788756,labeled,"Web App",user_57,572088522
+56_group5,1456788756,assigned,user_13,user_13,572088523
+56_group5,1456788756,milestoned,"Solution 1: Web Scraping Application",user_57,572088524
+25_group5,1456788859,assigned,user_39,user_39,572090811
+25_group5,1456788923,mentioned,mentioned,user_39,572092335
+25_group5,1456788923,subscribed,subscribed,user_39,572092336
+56_group5,1456788947,unassigned,unassigned,user_13,572092850
+56_group5,1456788947,assigned,user_39,user_39,572092851
+56_group5,1456788970,unassigned,unassigned,user_39,572093357
+56_group5,1456788970,assigned,user_13,user_13,572093358
+7_group5,1456789003,mentioned,mentioned,user_39,572094101
+7_group5,1456789003,subscribed,subscribed,user_39,572094102
+56_group5,1456789033,mentioned,mentioned,user_13,572094757
+56_group5,1456789033,subscribed,subscribed,user_13,572094758
+15_group5,1456789056,mentioned,mentioned,user_18,572095227
+15_group5,1456789056,subscribed,subscribed,user_18,572095228
+57_group5,1456789070,labeled,enhancement,user_39,572095525
+57_group5,1456789070,labeled,Plugin,user_39,572095526
+57_group5,1456789070,assigned,user_39,user_39,572095527
+57_group5,1456789070,milestoned,"Solution 2: Plugin Development",user_39,572095528
+55_group5,1456790293,closed,closed,user_39,572120670
+7_group5,1456790939,labeled,enhancement,user_57,572134943
+25_group5,1456796098,closed,closed,user_39,572246924
+25_group5,1456796109,labeled,"Web App",user_39,572247126
+10_group5,1456796172,closed,closed,user_39,572248582
+15_group5,1456797229,closed,closed,user_18,572273898
+7_group5,1456797391,mentioned,mentioned,user_39,572276560
+7_group5,1456797391,subscribed,subscribed,user_39,572276561
+15_group5,1456819668,reopened,reopened,user_18,572651939
+56_group5,1456842267,closed,closed,user_13,573090301
+58_group5,1456872910,labeled,"Web App",user_13,573824827
+58_group5,1456872910,assigned,user_13,user_13,573824832
+58_group5,1456872910,milestoned,"Solution 1: Web Scraping Application",user_13,573824834
+58_group5,1456873009,demilestoned,"Solution 1: Web Scraping Application",user_13,573827173
+58_group5,1456873015,labeled,enhancement,user_13,573827324
+58_group5,1456873119,milestoned,"Telemetry ",user_13,573829737
+59_group5,1456873165,labeled,enhancement,user_57,573830907
+59_group5,1456873165,labeled,Plugin,user_57,573830908
+59_group5,1456873165,assigned,user_39,user_39,573830909
+59_group5,1456873165,milestoned,"Telemetry ",user_57,573830910
+60_group5,1456873425,labeled,enhancement,user_18,573836912
+60_group5,1456873425,labeled,Android,user_18,573836913
+60_group5,1456873425,milestoned,"Telemetry ",user_18,573836914
+21_group5,1456873472,closed,closed,user_39,573837782
+60_group5,1456877830,closed,closed,user_18,573925345
+58_group5,1456877851,closed,closed,user_13,573925547
+59_group5,1456893127,closed,closed,user_18,574129938
+7_group5,1456893166,mentioned,mentioned,user_39,574130246
+7_group5,1456893166,subscribed,subscribed,user_39,574130247
+57_group5,1456893209,closed,closed,user_18,574130518
+15_group5,1456893238,demilestoned,"Solution 3: Android application for reviews",user_18,574130759
+15_group5,1456893386,milestoned,"April 1",user_18,574132552
+7_group5,1456893419,closed,closed,user_57,574132754
+61_group5,1459402922,assigned,user_13,user_13,609291566
+61_group5,1459402922,labeled,enhancement,user_13,609291567
+61_group5,1459402922,labeled,"Web App",user_13,609291568
+61_group5,1459402922,milestoned,"April 1",user_13,609291569
+62_group5,1459441308,assigned,user_13,user_13,610050843
+62_group5,1459441308,labeled,enhancement,user_13,610050846
+62_group5,1459441308,labeled,"Web App",user_13,610050847
+62_group5,1459441308,milestoned,"April 1",user_13,610050849
+63_group5,1459457163,assigned,user_57,user_57,610403463
+63_group5,1459457163,labeled,enhancement,user_57,610403464
+63_group5,1459457163,labeled,"Web App",user_57,610403466
+63_group5,1459457163,milestoned,"April 1",user_57,610403468
+64_group5,1459457201,assigned,user_57,user_57,610404347
+64_group5,1459457201,labeled,enhancement,user_57,610404348
+64_group5,1459457201,labeled,"Web App",user_57,610404349
+64_group5,1459457201,milestoned,"April 1",user_57,610404351
+65_group5,1459457237,assigned,user_57,user_57,610405201
+65_group5,1459457237,labeled,enhancement,user_57,610405202
+65_group5,1459457237,labeled,"Web App",user_57,610405203
+65_group5,1459457237,milestoned,"April 1",user_57,610405204
+66_group5,1459457275,assigned,user_18,user_18,610406038
+66_group5,1459457275,labeled,enhancement,user_57,610406039
+66_group5,1459457275,labeled,Android,user_57,610406040
+66_group5,1459457275,milestoned,"April 1",user_57,610406042
+67_group5,1459457300,assigned,user_18,user_18,610406749
+67_group5,1459457300,labeled,enhancement,user_57,610406750
+67_group5,1459457300,labeled,Android,user_57,610406751
+67_group5,1459457300,milestoned,"April 1",user_57,610406752
+68_group5,1459457336,assigned,user_39,user_39,610407867
+68_group5,1459457336,labeled,enhancement,user_57,610407868
+68_group5,1459457336,labeled,"Web App",user_57,610407869
+68_group5,1459457336,milestoned,"April 1",user_57,610407870
+63_group5,1459458050,closed,closed,user_57,610426371
+69_group5,1459458534,labeled,Android,user_18,610435897
+70_group5,1459458580,labeled,enhancement,user_18,610436662
+70_group5,1459458580,labeled,"Web App",user_18,610436663
+71_group5,1459458623,labeled,enhancement,user_18,610437529
+71_group5,1459458623,labeled,Plugin,user_18,610437530
+64_group5,1459459026,closed,closed,user_57,610446104
+72_group5,1459462373,assigned,user_13,user_13,610508852
+72_group5,1459462373,labeled,enhancement,user_13,610508853
+72_group5,1459462373,labeled,"Web App",user_13,610508854
+73_group5,1459462623,assigned,user_57,user_57,610512495
+73_group5,1459462623,labeled,enhancement,user_57,610512496
+73_group5,1459462623,labeled,"Web App",user_57,610512497
+73_group5,1459462623,milestoned,"April 1",user_57,610512498
+74_group5,1459462650,assigned,user_57,user_57,610512892
+74_group5,1459462650,labeled,enhancement,user_57,610512893
+74_group5,1459462650,labeled,"Web App",user_57,610512894
+74_group5,1459462650,milestoned,"April 1",user_57,610512895
+70_group5,1459462687,milestoned,"April 1",user_57,610513458
+70_group5,1459462689,assigned,user_39,user_39,610513490
+61_group5,1459468270,closed,closed,user_13,610592940
+73_group5,1459490484,closed,closed,user_57,610829784
+74_group5,1459490949,closed,closed,user_57,610835324
+72_group5,1459491404,milestoned,"April 1",user_57,610839836
+71_group5,1459491524,assigned,user_39,user_39,610841094
+69_group5,1459491534,assigned,user_18,user_18,610841184
+72_group5,1459541037,closed,closed,user_13,611751143
+62_group5,1459541056,closed,closed,user_13,611751626
+68_group5,1459660969,closed,closed,user_39,612526190
+69_group5,1459894295,closed,closed,user_18,615873522
+67_group5,1459894315,closed,closed,user_18,615874072
+66_group5,1459894336,closed,closed,user_18,615874668
+71_group5,1459911113,closed,closed,user_39,616120056
+75_group5,1459912999,labeled,enhancement,user_18,616139315
+75_group5,1459912999,labeled,"Web App",user_18,616139316
+76_group5,1459913054,labeled,enhancement,user_18,616139913
+76_group5,1459913054,labeled,Android,user_18,616139914
+77_group5,1459973871,labeled,enhancement,user_18,617392002
+77_group5,1459973871,labeled,Android,user_18,617392003
+78_group5,1459973910,labeled,enhancement,user_18,617392758
+78_group5,1459973910,labeled,Android,user_18,617392760
+79_group5,1459974011,labeled,enhancement,user_18,617394880
+79_group5,1459974011,labeled,"Web App",user_18,617394881
+79_group5,1459974149,renamed,renamed,user_18,617397684
+78_group5,1459974189,renamed,renamed,user_18,617398494
+77_group5,1459974202,renamed,renamed,user_18,617398808
+80_group5,1459974245,labeled,enhancement,user_18,617399849
+80_group5,1459974245,labeled,"Web App",user_18,617399850
+75_group5,1459990997,assigned,user_39,user_39,617684706
+81_group5,1459997051,labeled,"Web App",user_18,617752169
+82_group5,1459997069,labeled,Android,user_18,617752411
+83_group5,1459997220,labeled,Android,user_18,617753891
+83_group5,1460000372,milestoned,"Evaluation plan",user_57,617791083
+83_group5,1460000377,assigned,user_18,user_18,617791140
+82_group5,1460000392,milestoned,"Evaluation plan",user_57,617791277
+82_group5,1460000395,assigned,user_18,user_18,617791308
+81_group5,1460000413,milestoned,"Evaluation plan",user_57,617791464
+81_group5,1460000416,assigned,user_39,user_39,617791507
+80_group5,1460000518,milestoned,"Evaluation plan",user_57,617792208
+80_group5,1460000521,assigned,user_39,user_39,617792235
+79_group5,1460000530,milestoned,"Evaluation plan",user_57,617792311
+79_group5,1460000535,assigned,user_39,user_39,617792356
+78_group5,1460000553,milestoned,"Evaluation plan",user_57,617792507
+78_group5,1460000559,assigned,user_39,user_39,617792558
+75_group5,1460000976,milestoned,"Evaluation plan",user_57,617796556
+77_group5,1460000994,milestoned,"Evaluation plan",user_57,617796679
+76_group5,1460000999,milestoned,"Evaluation plan",user_57,617796696
+69_group5,1460001030,milestoned,"April 1",user_57,617796969
+71_group5,1460001034,milestoned,"April 1",user_57,617797001
+69_group5,1460001226,milestoned,"Bad smell code",user_57,617799494
+69_group5,1460001226,demilestoned,"April 1",user_57,617799495
+84_group5,1460001326,assigned,user_57,user_57,617800451
+84_group5,1460001326,labeled,enhancement,user_57,617800452
+84_group5,1460001326,labeled,"Web App",user_57,617800453
+84_group5,1460001326,milestoned,"Bad smell code",user_57,617800454
+85_group5,1460001384,assigned,user_18,user_18,617800858
+85_group5,1460001384,labeled,enhancement,user_57,617800859
+85_group5,1460001384,labeled,Android,user_57,617800860
+85_group5,1460001384,milestoned,"Bad smell code",user_57,617800861
+81_group5,1460001423,milestoned,"Bad smell code",user_57,617801163
+81_group5,1460001423,demilestoned,"Evaluation plan",user_57,617801164
+81_group5,1460001427,milestoned,"Evaluation plan",user_57,617801196
+81_group5,1460001427,demilestoned,"Bad smell code",user_57,617801197
+86_group5,1460001474,assigned,user_39,user_39,617801537
+86_group5,1460001474,labeled,Plugin,user_57,617801538
+86_group5,1460001474,milestoned,"Bad smell code",user_57,617801539
+15_group5,1460001533,labeled,wontfix,user_57,617802033
+86_group5,1460001657,labeled,"bad smell",user_57,617803923
+85_group5,1460001674,labeled,"bad smell",user_57,617804191
+85_group5,1460001674,unlabeled,enhancement,user_57,617804192
+84_group5,1460001682,labeled,"bad smell",user_57,617804362
+84_group5,1460001682,unlabeled,enhancement,user_57,617804363
+69_group5,1460001701,labeled,"bad smell",user_57,617804649
+83_group5,1460048602,closed,closed,user_18,618813437
+82_group5,1460048617,closed,closed,user_18,618813730
+85_group5,1460048669,closed,closed,user_18,618814755
+78_group5,1460048711,closed,closed,user_18,618815571
+15_group5,1460048748,closed,closed,user_18,618816175
+77_group5,1460048788,closed,closed,user_18,618816875
+76_group5,1460048802,closed,closed,user_18,618817105
+86_group5,1460052758,closed,closed,user_18,618910714
+81_group5,1460052772,closed,closed,user_18,618910994
+80_group5,1460052790,closed,closed,user_18,618911373
+79_group5,1460052807,closed,closed,user_18,618911742
+75_group5,1460052832,closed,closed,user_18,618912244
+84_group5,1460052844,closed,closed,user_18,618912514
+65_group5,1460052857,closed,closed,user_18,618912741
+70_group5,1460052871,closed,closed,user_18,618913057
